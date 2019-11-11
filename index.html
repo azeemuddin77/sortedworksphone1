@@ -165,8 +165,7 @@ function countDecrease(){
 
 $( function(){ 
     $("#knowmore").on("click",function(){
-    console.log($( "#fp-nav>ul li:nth-child(2)>a").html())
-    $( "#fp-nav>ul li:nth-child(2)>a.ui-link").click();
+    fullpage_api.moveTo('section2');
 })
      $("body").keydown(function(event) {
       if( event.which == 38 ){
@@ -341,13 +340,13 @@ function closeNav() {
  </video> -->
  <!-- <img src="./Assets/Video.png" width="100%"> -->
  <div class="mb-3 pr-4 w-100" style="position: absolute;bottom: 0">
-  <div class="text-center" id="knowmore"><span class="d-md-inline-block d-none">Scroll</span><span class="d-md-none d-inline-block">Swipe</span> 
-    To Know More <img src="./Assets/down.png"></div>
+  <div class="text-center" id="knowmore"><a href="#section2"><span class="d-md-inline-block d-none">Scroll</span><span class="d-md-none d-inline-block">Swipe</span> 
+    To Know More <img src="./Assets/down.png"></a></div>
       
      </div>
  </div>
  <!-- <div > -->
- <div class="text-center container-2 animated fadeInUp section ">
+ <div class="text-center container-2 animated fadeInUp section" data-anchor="section2">
     <!-- <div class="text-left" style="width:82%">
       <svg height="4" width="40" class="sm-line">
           <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
@@ -814,6 +813,7 @@ function closeNav() {
  <script type="text/javascript">
   new fullpage('#fullpage', {
     //options here
+    anchors: ['section1', 'section2', 'section3', 'section4'],
     navigation:true,
     autoScrolling:true,
     scrollHorizontally: true,
