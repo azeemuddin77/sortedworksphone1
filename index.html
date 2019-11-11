@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/svg" href="Assets/sorted-favicon.svg" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700i&display=swap" rel="stylesheet">
+  <link rel="short icon" href="Assets/sorted-favicon.png" type="image/png">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="Assets/javascript/jquery.js"></script> 
+  <script src="Assets/javascript/jqueryui.js"></script> 
+  <title>Sorted Works</title>
+  <link rel="stylesheet" type="text/css" href="loader.css">
+  <link rel="stylesheet" type="text/css" href="fullpage.min.css" />
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script type="text/javascript" src="fullpage.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"> -->
+  
+    <style>
+    body{
+    background: #3C5377;
+    }
+
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+/*.maincontainer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}*/
+
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+/*.thecard{
+  position:relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.5s ease;
+}*/
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+/*.thecard:hover{
+  transform: rotateY(180deg);
+}*/
+
+
+/*.thefront{
+  width: 97px;
+  height: 97px;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  background-color: #ff0000;
+  
+  -webkit-box-shadow: 3px 3px 5px 5px rgba(100,0,0,1);
+  -moz-box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);
+  box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);
+ 
+}*/
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+/*.theback{
+  position: absolute;
+  top: 0;
+  left: 11px;
+  width: 97px;
+  height:97px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: red;
+  transform: rotateY(180deg);
+  background-image: url("./Assets/01.disaster-management.png") ;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 3px 3px 5px 5px rgba(100,0,0,1);
+  -moz-box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);
+  box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);
+}
+*/
+
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+/*.thefront h1, .theback h1{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.thefront p, .theback p{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+}*/
+/*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+    </style>
+  <script> 
+  
+// $(window).load(function(){
+ //  var setHeightOfDiv=$(window).height()-74;
+  // $(".presenting-section").css({"height":setHeightOfDiv+'px',"margin-top":"74px"});
+   // setTimeout(function(){
+   //  $('#overlay').remove();
+   // },2000)
+   // $( ".container-2" ).hide();
+   // $( ".container-3" ).hide();
+   // $( ".container-4" ).hide();
+// }); 
+count=1;
+function countIncrease(){
+  count++
+       if(count==4){
+        $(".rotating-container").hide();
+       }
+       if(count>4){
+        count=4
+        
+       }
+       // $(".rotating-container").show();
+       console.log(count)
+       $( ".container-"+(count-1) ).hide();
+       // $( ".container-"+count ).slideDown( "slow" );
+       $( ".container-"+count ).show();
+       
+
+}
+
+function countDecrease(){
+  count--
+        if(count<1){
+        count=1
+       }
+       if(count!=4){
+         $(".rotating-container").show();
+       }
+       console.log(count)
+       // $( ".container-"+count).slideDown( "slow" );
+       $( ".container-"+count).show(  );
+       $( ".container-"+ (count+1)).hide()
+}
+// $(window).bind('mousewheel', function(e){
+//     if(e.originalEvent.wheelDelta > 0)
+//     {
+//        countDecrease()
+//     }
+//     else
+//     { 
+//        countIncrease()
+//     }
+// }); 
+
+$( function(){ 
+    $("#knowmore").on("click",function(){
+    console.log($( "#fp-nav>ul li:nth-child(2)>a").html())
+    $( "#fp-nav>ul li:nth-child(2)>a.ui-link").click();
+})
+     $("body").keydown(function(event) {
+      if( event.which == 38 ){
+        countDecrease()
+      }
+      if(event.which == 40){
+        countIncrease()
+      }
+    });  
+    $("#next-block").hide(); 
+   $("#previous").on("click",function(){
+      $("#previous-block").show()
+      $("#next-block").hide()
+      $('#number').text("03/06")
+   })
+   $("#next").on("click",function(){
+     $("#next-block").show()
+     $("#previous-block").hide()
+     $('#number').text("06/06")
+   })  
+   $(".small-btn").on("click",function(){
+    $(this).css({"background-color":"white","color":"black"})
+   }) 
+   $('body').scrollspy({ target: '#main-nav' });
+    var offset =150;
+    $("#main-nav a").on('click', function (event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+
+        const hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: ($(hash).offset().top)-offset
+        }, 800, function () {
+          window.location.hash = hash;
+        });
+      }
+    });
+
+    $("#facebook,#linkedin,#youtube,#insta").on("mouseenter",function(){
+      var name=$(this).find("img").attr("src")
+      if(name=="./Assets/facebook-white.png"){
+        $(this).find("img").attr("src","./Assets/facebook-hover.svg")
+      }
+      else if(name=="./Assets/instagram-white.png"){
+        $(this).find("img").attr("src","./Assets/instagram-hover.svg")
+      }
+      else if(name=="./Assets/linkedin-white.png"){
+       $(this).find("img").attr("src","./Assets/linkedin-hover.svg") 
+      }
+      else if(name=="./Assets/youtube-white.png"){
+        $(this).find("img").attr("src","./Assets/youtube-hover.svg")
+      }
+      else{
+
+      }
+    }) 
+    $("#facebook,#linkedin,#youtube,#insta").on("mouseleave",function(){
+      var name=$(this).find("img").attr("src")
+      if(name=="./Assets/facebook-hover.svg"){
+        $(this).find("img").attr("src","./Assets/facebook-white.png")
+      }
+      else if(name=="./Assets/instagram-hover.svg"){
+        $(this).find("img").attr("src","./Assets/instagram-white.png")
+      }
+      else if(name=="./Assets/linkedin-hover.svg"){
+       $(this).find("img").attr("src","./Assets/linkedin-white.png") 
+      }
+      else if(name=="./Assets/youtube-hover.svg"){
+        $(this).find("img").attr("src","./Assets/youtube-white.png")
+      }
+      else{
+
+      }
+    })
+
+  var tags=['Above The Fold','Ad Flight','Ad Networks','Ad Server','Ad Space','Advertise','Advertorial','Affiliate Marketing','Affinity Marketing','Agency','B2B','B2C','Backbone','Bandwidth ','Banner','Below The Fold','Billboard','Bleed','Blind Link','Blind Traffic','Bounce Rate','Boutique','Browser','Cache','Campaign','Click Rate','Click Through','Click Through Rate','Clicks','Clickstream','Comp','Comparative','Console','Contextual Advertising','Conversion','Cookies','Copy Writing','Copywriter','CPC','CPD','CPI','CPM','CPS','CPT','CPTM ','Creative','CRM','CTA','CTR','Dark site','Defaults','Demographics','Direct Marketing','Direct Response','DMA','DNS','Domain Name','End Date','Flash','Flight','Forced Click','Frequency','Geotargeting','GIF','Hit','Hot Linking','House Ads','HTML','Hyperlink','Impressions','Insertion Order','Internet','Inventory','IP address','Island Position','Java','JavaScript','JPEG','Jump Page','Keyword','Keyword Density','Landing Page','Lead','Lead Product','Life Time Value','Line Item','Make Goods','Malvertising','Media Kit','Mind Share','Monetization','Netiquette','Newbie','Niche','Opt In','Opt Out','Page View','Pay Per Click','Pay Per Impression','Pitch','Platform','Point of Purchase','Pop Up','Portal','PPC','Preemptive','Product Placement','Proxy Server','Psychographics','Publisher','Rank','Rate Card','Reach','Real Time','Referring Page','Regional','Registration','Remnant Space','Request','Return Visits','RFP','RFQ','Rich Media','Right Hand Read','Roadblock ','ROC','ROI ','RON ','ROS ','Rotation','RSS ','SEM','SEO','Session','Shockwave','Skyscraper','Slogan','Snail Mail','Soft Sell','Spam','Spider','Splash Page','Split-Run','Sponsorships','Standards','Start Date','Statistics','Sticky','Subliminal','Tag Line','Targeted','Testimonial','Traffic','Unique Visitors','Up Sell','Virual',' Virual Marketing','Visit ','Volume Discount','Web Page','Web Server','Web Site','Webcasting','Webmaster'];
+
+    source: 
+  $( "#tags" ).autocomplete({ 
+  source: function(request, response) {
+        var results = $.ui.autocomplete.filter(tags, request.term);
+
+        response(results.slice(0, 4));
+    },
+    messages:{
+      noResults:'',
+      results:''
+    }
+  }); 
+  $("ul").on("click","li",function(){
+    $(".sortedBrands").empty();
+    $(".sortedBrands").append("<span style='text-transform:uppercase'>"+"Strap line to bottom line, online to offline, digital medium to the homo-sapiens medium, we’ll have you sorted."+"</span>");
+  })
+  $("input[type='text']").on("click",function(){
+    $(".sortedBrands").empty();
+  })
+
+  $("input[type='text']").select(function(){
+     $(".sortedBrands").empty();
+});
+  $("input[type='text']").keypress(function(){
+  $(".sortedBrands").empty();
+});
+} ); 
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "300px";
+  document.body.style.backgroundColor = "black";
+  // $("#openbutton").empty().append(' <a href="javascript:void(0)" class="closebtn" id="close" onclick="closeNav()">&times;</a>')
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  // document.body.style.backgroundColor = "white";
+}
+
+
+</script> 
+</head>
+<!-- <div id="overlay" class="d-flex align-items-center justify-content-center">
+     <img src="./Assets/ezgif.com-video-to-gif.gif" alt="Loading" /> -->
+  <!-- <div class="contain">
+      <div class="📦"></div>
+      <div class="📦"></div>
+      <div class="📦"></div>
+      <div class="📦"></div>
+      <div class="📦"></div>
+  </div> -->
+<!-- </div> -->
+
+<body id="main-nav" style="background-color: #0a0a0a;font-family: 'Josefin Sans', sans-serif;" class="text-white">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:black !important;box-shadow: 0px 2px 2px rgba(0,0,0,0.25);"> 
+  <a class="navbar-brand" href="#"><img width="80%"   src="./Assets/sorted-works-logo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item dropdown">
+      </li>
+      <li class="nav-item">
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" onclick="openNav()" id="openbutton"><img src="./Assets/Menu.png" class="menu-transition"></li>
+    </ul>
+   
+  </div>
+</nav>
+<!-- sidenav -->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#" class="mt-4">About</a>
+  <a href="#">Work</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- <div class="presenting-section  d-flex align-items-center justify-content-center w-100" style="overflow-y: hidden;">   -->
+<div id="fullpage">  
+ <!-- <div class="position-fixed fixed-bottom rotating-container"><img src="./Assets/Scroll.png" width="50px" class="float-right mr-3 mb-3 rotating"></div>  -->
+ <div class="section homesection">
+ <!-- <video class="container-1 animated fadeInUp w-100 border border-warning" autoplay muted loop id="myVideo"> -->
+ <!-- <video style="min-height: 100%;min-width: 100%;" autoplay muted loop data-keepplaying>
+            <source src="./Assets/HomePageVideo3_Comp.mov" type="video/mp4">
+ </video> -->
+ <!-- <img src="./Assets/Video.png" width="100%"> -->
+ <div class="mb-3 pr-4 w-100" style="position: absolute;bottom: 0">
+  <div class="text-center" id="knowmore">Scroll 
+    To Know More <img src="./Assets/down.png"></div>
+      
+     </div>
+ </div>
+ <!-- <div > -->
+ <div class="text-center container-2 animated fadeInUp section ">
+    <!-- <div class="text-left" style="width:82%">
+      <svg height="4" width="40" class="sm-line">
+          <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
+      </svg>
+    </div> -->
+    <div style="height:100%" class="w-100 d-flex align-items-center justify-content-center">
+      <div>
+        <h1 class="inputfie mt-5 sm-header"><span class="waver d-none">👋</span><div><div style="width: 50px;height:3px;background-color: white;margin-bottom: 20px;" class="mx-md-0 mx-auto"></div><div>Hi There, Just look up what your brand needs to feel, Sorted!</div></div></h1> 
+         <div class="d-flex justify-content-center h-100 ">
+            <div class="searchbar margin-bottom1  mt-5 ">
+              <div class="row w-100 inputfie">
+                <div class="col-md-1 d-flex align-items-center justify-content-center">
+                   <img class="ml-3 smsearch" width="20px" height="20px" src="./Assets/search1.svg">
+                </div>
+                <div class="col-md-10 ">
+                  <input id="tags" class="search_input text-white" type="text" name="" placeholder="Ask us anything...">
+                </div>
+                <div class="col-md-1 d-flex align-items-center justify-content-center">
+                  <img class="smphone" width="20px" height="20px" src="./Assets/microphone1.svg" >
+                </div>
+              </div>  
+              <div class="row">
+                 <div class="sortedBrands col-12"></div> 
+              </div>
+            </div>
+         </div>
+       </div>
+     </div>
+    
+ </div>
+  <!-- </div>  -->
+<!-- <div class="container-3 animated fadeInUp section">
+<div class="container_fluid mb-2"  >
+  <div class="container text-left d-flex justify-content-between" style="max-height: 100%">
+    <div class="row ">
+      <div class="col-md-6 col-sm-6 col-12 sm-textCenter" style="max-height:330px;overflow: hidden">
+        <div class="mx-auto text-left sm-hide" style="width:100%">
+        <svg height="10" width="42" class="sm-line tagsm-line">
+            <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
+        </svg>
+      </div>
+        <h1 id="work" class="we-got sm-header sm-hide" style="line-height:1.5">We got the whole  nine <br> yards, Sorted!</h1>
+
+    <div class="tag mx-auto pl-4">
+      <div class="text-left" style="width:80%">
+        <svg height="5" width="28">
+        <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
+        </svg>
+      </div>
+        <h1 class="text-left font-weight-bold sm-header" style="line-height:1.5">We got the whole nine yards, Sorted!</h1>
+    </div>
+        <p class="live">To live up to the true potential of an Oh-so-promising name, we are a full-blown agency based out of Bangalore. With the audacious vigour to derive an insight, only to liberate it in the unsuspecting world in the most strikingly original form is what we feel strongly about. By blurring the lines between the various facets of communication, we aspire to provide the collective force of Advertising under one roof!</p> 
+
+      </div>
+      <div class="col-md-2  col-sm-none">
+      </div>
+      <div class="col-md-4  col-sm-6 col-12 sm-circles" >
+        <div class="row " >
+          <div class="col-4 circlepadding " style="height:102px">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"><p></p></div>
+                <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront" style="background-color:#ff6600;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ff6600;font-size:12px;"><span>Design</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding ">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#ffff00;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ffff00;font-size:12px;"><span>Digital</span></div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="row" >
+          <div class="col-4 circlepadding" style="height:102px">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#25ce21;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#25ce21;font-size:12px;"><span>Strategy</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#00aef4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center text-center" style="background-color:#00aef4;font-size:12px;"><div>Web <br>Development</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#006ec4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#006ec4;font-size:12px;"><span>Innovation</span></div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="row" >
+          <div class="col-4 circlepadding" style="height:102px">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#702aa1;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#702aa1;font-size:12px;" ><span>Branding</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#f4f4f4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center"  style="background-color:#f4f4f4;font-size:12px;"><span>Production</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#282828;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#282828;font-size:12px;"><span class="align-self-center ">Sorted</span></div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+  
+
+<div class="container">
+  <div class="mx-auto d-flex justify-content-between text-center mb-2" style="width: 100%">
+    <div class="" style="width: 20%">
+      <img src="./Assets/Arrow-Left.svg" id="previous">
+    </div>  
+    <div class="d-flex align-self-center justify-content-center" style="width: 20%" id="number">
+    03/06
+    </div>
+    <div style="width: 20%">
+      <img src="./Assets/Arrow-Right.svg" id='next' >
+    </div>  
+  </div>  
+</div>
+ 
+
+<div class="container">
+  <div class="row" id="previous-block">
+    <div class="col-12 col-md-4 text-md-left text-center mb-5">
+      <a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/eatfit1.png"></a>
+    </div>
+    <div class="col-12 col-md-4 text-md-center text-center mb-3">
+      <a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/disruptlogo.png"></a>
+    </div>
+    <div class="col-12 col-md-4 text-center">
+      <a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC.png"></a>
+    </div>
+  </div>
+
+  <div class="row" id="next-block">
+    <div class="col-12 col-md-4 text-md-left text-center mb-5">
+      <a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/RMZ.png"></a>
+    </div>
+    <div class="col-12 col-md-4 text-md-center text-center mb-3">
+      <a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/SlidersAndFries.png"></a>
+    </div>
+    <div class="col-12 col-md-4 text-center">
+      <a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC1.png"></a>
+    </div>
+  </div>
+</div>
+</div> -->
+<div class="container-3 animated fadeInUp section">
+<div class="container_fluid" style="margin-top: 4rem;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-12 sm-textCenter">
+        <h1 id="work" class="we-got sm-header" style="line-height:1.5"><div><div class="mx-md-0 mx-auto mb-md-3 mb-0" style="width:40px;height:3px;background-color:white;"></div><div>Every decade had a WORD <br> that defined it.</div></div></h1>
+        <p>
+          The 60’s had ‘Groovy’. <br>
+          The 70’s had ‘Dig’. <br>
+          The 80’s had ‘Rad’. <br>
+          The 90’s had ‘Wicked’. <br>
+          The 2000’s had ‘Sweet’.<br>
+          TODAY WE HAVE, SORTED!
+    
+        </p> 
+
+      </div>
+      <div class="col-md-2 d-none d-md-block">
+      </div>
+      <div class="col-md-4 col-12 d-flex-col justify-content-center" >
+        <div class="row">
+          <div class="col-2 col-md-0"></div>
+          <div class="col-8 col-md-12">
+            <div class="d-flex text-center justify-content-between mb-md-3 mb-1">
+        <div class="mr-1 mr-md-0"><div class="w-100">
+              <div class="thecard">
+                <div class="thefront"><p></p></div>
+                <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
+              </div>
+            </div></div>
+        <div class="mr-1 mr-md-0"><div class="w-100">
+              <div class="thecard">
+                <div class="thefront" style="background-color:#ff6600;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ff6600;font-size:12px;"><span>Design</span></div>
+              </div>
+            </div></div>
+        <div><div class="w-100">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#ffff00;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ffff00;font-size:12px;"><span>Digital</span></div>
+              </div>
+            </div></div>
+      </div>
+      <div class="d-flex text-center justify-content-between mb-md-3 mb-1">
+        <div class="mr-1 mr-md-0"><div class="w-100">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#25ce21;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#25ce21;font-size:12px;"><span>Strategy</span></div>
+              </div>
+            </div></div>
+        <div class="mr-1 mr-md-0"><div class="w-100">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#00aef4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center text-center" style="background-color:#00aef4;font-size:12px;"><div>Web <br>Development</div></div>
+              </div>
+            </div></div>
+        <div><div class="w-100">
+               <div class="thecard">
+                <div class="thefront"  style="background-color:#006ec4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#006ec4;font-size:12px;"><span>Innovation</span></div>
+              </div>
+            </div></div>
+      </div>
+      <div class="d-flex text-center justify-content-between mb-md-3 mb-1">
+        <div class="mr-1 mr-md-0"><div class="w-100">
+               <div class="thecard">
+                <div class="thefront"  style="background-color:#702aa1;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#702aa1;font-size:12px;" ><span>Branding</span></div>
+              </div>
+            </div></div>
+        <div class="mr-1 mr-md-0"><div class="w-100">
+               <div class="thecard">
+                <div class="thefront"  style="background-color:#f4f4f4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center"  style="background-color:#f4f4f4;font-size:12px;"><span>Production</span></div>
+              </div>
+            </div></div>
+        <div><div class="w-100">
+               <div class="thecard">
+                <div class="thefront"  style="background-color:#282828;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#282828;font-size:12px;"><span class="align-self-center ">Sorted</span></div>
+              </div>
+            </div></div>
+      </div>
+          </div>
+          <div class="col-2 col-md-0"></div>
+        </div>
+      
+       <!--  <div class="row " >
+          <div class="col-4 circlepadding " style="height:102px">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"><p></p></div>
+                <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront" style="background-color:#ff6600;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ff6600;font-size:12px;"><span>Design</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding ">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#ffff00;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ffff00;font-size:12px;"><span>Digital</span></div>
+              </div>
+            </div>
+          </div>
+          </div> -->
+          <!-- <div class="maincontainer border">
+            <div class="thecard">
+              <div class="thefront"><p></p></div>
+              <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
+            </div>
+          </div>
+          <div class="maincontainer">
+            <div class="thecard">
+              <div class="thefront"><p></p></div>
+              <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
+            </div>
+          </div>
+          <div class="maincontainer">
+            <div class="thecard">
+              <div class="thefront"><p></p></div>
+              <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
+            </div>
+          </div> -->
+         <!--  <div class="row" >
+          <div class="col-4 circlepadding" style="height:102px">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#25ce21;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#25ce21;font-size:12px;"><span>Strategy</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#00aef4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center text-center" style="background-color:#00aef4;font-size:12px;"><div>Web <br>Development</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#006ec4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#006ec4;font-size:12px;"><span>Innovation</span></div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="row" >
+          <div class="col-4 circlepadding" style="height:102px">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#702aa1;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#702aa1;font-size:12px;" ><span>Branding</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#f4f4f4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center"  style="background-color:#f4f4f4;font-size:12px;"><span>Production</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 circlepadding">
+            <div class="maincontainer">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#282828;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#282828;font-size:12px;"><span class="align-self-center ">Sorted</span></div>
+              </div>
+            </div>
+          </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+<!-- <div class="container">
+  <div class="mx-auto d-flex justify-content-between text-center mb-2" style="width: 100%">
+    <div class="" style="width: 20%">
+      <img src="./Assets/Arrow-Left.svg" id="previous">
+    </div>  
+    <div class="d-flex align-self-center justify-content-center" style="width: 20%" id="number">
+    03/06
+    </div>
+    <div style="width: 20%">
+      <img src="./Assets/Arrow-Right.svg" id='next' >
+    </div>  
+  </div>  
+</div>
+  -->
+<!-- 
+<div class="container">
+  <div class="row" id="previous-block">
+    <div class="col-12 col-md-4 text-md-left text-center mb-5">
+      <a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/eatfit1.png"></a>
+    </div>
+    <div class="col-12 col-md-4 text-md-center text-center mb-3">
+      <a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/disruptlogo.png"></a>
+    </div>
+    <div class="col-12 col-md-4 text-center">
+      <a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC.png"></a>
+    </div>
+  </div>
+
+  <div class="row" id="next-block">
+    <div class="col-12 col-md-4 text-md-left text-center mb-5">
+      <a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/RMZ.png"></a>
+    </div>
+    <div class="col-12 col-md-4 text-md-center text-center mb-3">
+      <a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/SlidersAndFries.png"></a>
+    </div>
+    <div class="col-12 col-md-4 text-center">
+      <a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC1.png"></a>
+    </div>
+  </div>
+</div> -->
+ 
+</div>
+<div class="w-100  container-4 section">
+<div class="container pt-5 sm-textCenter animated fadeInUp">
+    <div class="sm-linealignleft">
+      <svg height="4" width="35">
+          <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
+      </svg>
+    </div>  
+    <div class="mb-5"><h2 class="sm-header" id="contact">Let's Get You, Sorted!</h2></div>
+    <div class="d-flex justify-content-between justify-content-sm-between" style="height:200px;">
+        <div class="width-on-sm-screen">
+          <h3 class="pb-3 ">Bangalore</h3>
+          <p class="terms-conditionsfont">+91 9538 6010 12</p>
+          <p style="line-height: 1.2"><small class="terms-conditionsfont">1/33 <br> Chancellor Chambers, Ulsoor Road <br> Bangalore, 560 042 </small></p>
+          <p style="font-size: 0.8rem" class="general-transition"><small><a href="https://www.google.com/maps/place/Sorted+Works+Inc+-Advertising+Agency+in+Ulsoor+Road/@12.9758398,77.6145833,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae17e8603bb611:0xedff77684d4e59b!8m2!3d12.9758398!4d77.616772" target="_blank" >VIEW ON MAP</a></small></p>
+        </div>
+        <div class="width-on-sm-screen">
+          <h3 class="pb-3">Mumbai</h3>
+          <p class="terms-conditionsfont">+91 9773 0052 90</p><br>
+          <p class="terms-conditionsfont">contact@sortedworksinc.com</p><br><br>
+        </div>
+        <div class="sm-address align-items-center">
+          <h3 class="pb-3 ">Social Media</h3>
+          <p class="d-flex align-items-center general-transition" id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/facebook-white.png">Facebook</a></p>
+          <p id="insta" class="general-transition"><a href="https://www.instagram.com/sortedworksinc/" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/instagram-white.png">Instagram</a></p>
+          <p id="linkedin" class="general-transition"><a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/linkedin-white.png">LinkedIn</a></p>
+          
+        </div>
+     </div>
+     <div class="sm-icons">
+          <div class="btn-on-smal-screen"><a href="contact.html" class="btn btn-outline-warning small-btn mb-4">WRITE TO US</a></div>
+          <a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as"><img id="facebook" class="mr-3" width="16px" height="16px" src="./Assets/facebook-white.png"></a>
+          <a href="https://www.instagram.com/sortedworksinc/"><img id="insta" class="mr-3" width="16px" height="16px" src="./Assets/instagram-white.png"></a>
+          <a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img id="linkedin" class="mr-3" width="16px" height="16px" src="./Assets/linkedin-white.png"></a> 
+          <p class="mt-3 general-transition">Terms and condition</p>
+          <p>Copyright 2019 All rights reserved. </p>
+        </div>
+     <div class="bottom-spacing">
+     </div>
+  <div class="container d-flex justify-content-between align-items-center">
+    <a href="./contact.html" class="sm-button btn btn-outline-warning px-5">WRITE TO US</a>
+    <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition">Terms and condition</p>
+    <p class="terms-conditionsfont copytermsfonts mt-3 ">Copyright 2019 All rights reserved. </p>
+  </div>
+  </div>
+  <img src="./Assets/sorted-energyLine.png" width="100%" style="position: absolute;bottom: 0;left: 0;">
+ </div> 
+</div>
+<!-- </div> -->
+ <script type="text/javascript">
+  new fullpage('#fullpage', {
+    //options here
+    navigation:true,
+    autoScrolling:true,
+    scrollHorizontally: true,
+    scrollingSpeed: 1000,
+  });
+  fullpage_api.setAllowScrolling(true);
+
+</script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  crossorigin="anonymous"></script>
+<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  
+</body>
+
+</html>
