@@ -260,8 +260,9 @@ $( function(){
     }
   }); 
 
-  $('input').focus(function() { $.fn.fullpage.setAutoScrolling(false); })
-  $('input').blur(function() { $.fn.fullpage.setAutoScrolling(true); })
+  $('input[type="text"]').blur(function() {
+    $(window).scrollTop(0,0);
+  });
   $("ul").on("click","li",function(){
     $(".sortedBrands").empty();
     $(".sortedBrands").append("<span>"+"Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted."+"</span>");
@@ -380,7 +381,9 @@ function closeNav() {
                 </div>
               </div>  
               <div class="row">
-                  
+                 <div class="sortedBrands col-12">
+                 
+                 </div> 
               </div>
             </div>
          </div>
