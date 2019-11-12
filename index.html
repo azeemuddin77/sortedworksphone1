@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -110,7 +109,6 @@
 /*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
     </style>
   <script> 
-  window.addEventListener("load", function() { window. scrollTo(0, 0); });
 // $(window).load(function(){
  //  var setHeightOfDiv=$(window).height()-74;
   // $(".presenting-section").css({"height":setHeightOfDiv+'px',"margin-top":"74px"});
@@ -557,19 +555,19 @@ function closeNav() {
           The 80’s had ‘Rad’. <br>
           The 90’s had ‘Wicked’. <br>
           The 2000’s had ‘Sweet’.<br>
-          TODAY WE HAVE, SORTED! <br>
-          <span style="font-size: 10px;" class="d-md-block d-none">Flip the dots<img class="ml-3" src="./Assets/flipdotsrightarrow.png"></span>
+          TODAY WE HAVE, SORTED! <br><br>
+          <span style="font-size: 15px;">Flip the dots<img class="ml-3 d-md-inline-block d-none" src="./Assets/flipdotsrightarrow.png"><img src="./Assets/flipdown.png" class="ml-3 d-md-none d-inline-block"></span>
     
         </p> 
 
       </div>
       <div class="col-md-2 d-none d-md-block">
       </div>
-      <div class="col-md-4 col-12 d-flex-col justify-content-center" >
+      <div class="col-md-4 col-12 d-flex-col justify-content-center">
         <div class="row">
           <div class="col-2 col-md-0"></div>
-          <div class="col-8 col-md-12">
-            <div class="d-flex text-center justify-content-between mb-md-3 mb-1">
+          <div class="col-8 col-md-12 paddingleftofcir">
+            <div class="d-flex justify-content-between mb-md-3 mb-1" style="margin:0 11px;">
         <div class="mr-1 mr-md-0"><div class="w-100">
               <div class="thecard">
                 <div class="thefront"><p></p></div>
@@ -585,11 +583,11 @@ function closeNav() {
         <div><div class="w-100">
               <div class="thecard">
                 <div class="thefront"  style="background-color:#ffff00;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ffff00;font-size:12px;"><span>Digital</span></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ffff00;font-size:12px;"><span style="color: black;">Digital</span></div>
               </div>
             </div></div>
       </div>
-      <div class="d-flex text-center justify-content-between mb-md-3 mb-1">
+      <div class="d-flex text-center justify-content-between mb-md-3 mb-1" style="margin:0 11px;">
         <div class="mr-1 mr-md-0"><div class="w-100">
               <div class="thecard">
                 <div class="thefront"  style="background-color:#25ce21;"><p></p></div>
@@ -609,7 +607,7 @@ function closeNav() {
               </div>
             </div></div>
       </div>
-      <div class="d-flex text-center justify-content-between mb-md-3 mb-1">
+      <div class="d-flex text-center justify-content-between mb-md-3 mb-1" style="margin:0 11px;">
         <div class="mr-1 mr-md-0"><div class="w-100">
                <div class="thecard">
                 <div class="thefront"  style="background-color:#702aa1;"><p></p></div>
@@ -619,7 +617,7 @@ function closeNav() {
         <div class="mr-1 mr-md-0"><div class="w-100">
                <div class="thecard">
                 <div class="thefront"  style="background-color:#f4f4f4;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center"  style="background-color:#f4f4f4;font-size:12px;"><span>Production</span></div>
+                <div class="theback d-flex align-items-center justify-content-center"  style="background-color:#f4f4f4;font-size:12px;"><span style="color: black;">Production</span></div>
               </div>
             </div></div>
         <div><div class="w-100">
@@ -780,7 +778,7 @@ function closeNav() {
 </div>
 <div class="w-100  container-4 section">
 <div class="container pt-5 sm-textCenter animated fadeInUp">
-    <div class="sm-linealignleft">
+    <div class="text-md-left text-center">
       <svg height="4" width="35">
           <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
       </svg>
@@ -819,7 +817,7 @@ function closeNav() {
   <div class="container d-flex justify-content-between align-items-center">
     <a href="./contact.html" class="sm-button btn btn-outline-warning px-5">WRITE TO US</a>
     <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition">Terms and condition</p>
-    <p class="terms-conditionsfont copytermsfonts mt-3 ">Copyright 2019 All rights reserved. </p>
+    <!-- <p class="terms-conditionsfont copytermsfonts mt-3 ">Copyright 2019 All rights reserved. </p> -->
   </div>
   </div>
   <img src="./Assets/sorted-energyLine.png" width="100%" style="position: absolute;bottom: 0;left: 0;">

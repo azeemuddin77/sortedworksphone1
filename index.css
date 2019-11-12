@@ -408,9 +408,10 @@ body{
   background-color: red;
   transform: rotateY(180deg);
   background-repeat: no-repeat;
-  -webkit-box-shadow: 3px 3px 5px 5px rgba(100,0,0,1);
+  /*-webkit-box-shadow: 3px 3px 5px 5px rgba(100,0,0,1);
   -moz-box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);
-  box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);
+  box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);*/
+  /*text-shadow: 0px 3px 3px rgba(0,0,0,0.6);*/
 }
 
 
@@ -494,6 +495,9 @@ body{
 
 
      @media (max-width: 767px){
+      .paddingleftofcir{
+        padding-left: 0px;
+      }
       #knowmorehover:hover{
         font-size:1rem;
       }
