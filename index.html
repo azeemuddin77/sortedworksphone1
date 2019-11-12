@@ -259,6 +259,9 @@ $( function(){
       results:''
     }
   }); 
+
+  $('input').focus(function() { $.fn.fullpage.setAutoScrolling(false); })
+  $('input').blur(function() { $.fn.fullpage.setAutoScrolling(true); })
   $("ul").on("click","li",function(){
     $(".sortedBrands").empty();
     $(".sortedBrands").append("<span>"+"Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted."+"</span>");
