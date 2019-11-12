@@ -261,7 +261,7 @@ $( function(){
   }); 
   $("ul").on("click","li",function(){
     $(".sortedBrands").empty();
-    $(".sortedBrands").append("<span style='text-transform:uppercase'>"+"Strap line to bottom line, online to offline, digital medium to the homo-sapiens medium, we’ll have you sorted."+"</span>");
+    $(".sortedBrands").append("<span style='text-transform:uppercase'>"+"Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted."+"</span>");
   })
   $("input[type='text']").on("click",function(){
     $(".sortedBrands").empty();
@@ -357,9 +357,10 @@ function closeNav() {
     </div> -->
     <div style="height:100%" class="w-100 d-flex align-items-center justify-content-center">
       <div>
-        <h1 class="inputfie mt-5 sm-header"><span class="waver d-none">👋</span><div><div style="width: 50px;height:3px;background-color: white;margin-bottom: 20px;" class="mx-md-0 mx-auto"></div><div>Hi There, Just look up what your brand needs to feel, Sorted!</div></div></h1> 
-         <div class="d-flex justify-content-center h-100 ">
-            <div class="searchbar margin-bottom1  mt-5 ">
+       <!--  <h1 class="inputfie mt-5 sm-header border"><span class="waver d-none">👋</span><div><div style="width: 50px;height:3px;background-color: white;margin-bottom: 20px;" class="mx-md-0 mx-auto"></div><div>Hi There, Just look up what your brand needs to feel, Sorted!</div></div></h1>  -->
+         <div class="d-flex-col justify-content-center h-100 border">
+          <h1 class="inputfie mt-5 sm-header h2 border"><span class="waver d-none">👋</span><div><div style="width: 40px;height:3px;background-color: white;margin-bottom: 24px;" class="mx-md-0 mx-auto"></div><div class="d-inline-block">Hi</div> there, just look up what your brand needs to feel, Sorted!</div></h1>
+            <div class="searchbar margin-bottom1  mt-5 mx-auto w-100">
               <div class="row w-100 inputfie">
                 <div class="col-md-1 d-flex align-items-center justify-content-center">
                    <img class="ml-3 smsearch" width="20px" height="20px" src="./Assets/search1.svg">
