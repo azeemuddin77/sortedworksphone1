@@ -494,6 +494,9 @@ body{
 
 
      @media (max-width: 767px){
+      #knowmorehover:hover{
+        font-size:1rem;
+      }
       #fp-nav.fp-right{
         right:80%;
       }
