@@ -494,6 +494,9 @@ body{
 
 
      @media (max-width: 767px){
+      #fp-nav.fp-right{
+        right:80%;
+      }
       .homesection{
         background-image:url("./Assets/Videophone.png");
         background-repeat: no-repeat;
