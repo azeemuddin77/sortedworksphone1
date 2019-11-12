@@ -262,20 +262,20 @@ $( function(){
   $("ul").on("click","li",function(){
     $(".sortedBrands").empty();
     $(".sortedBrands").append("<span style='text-transform:uppercase'>"+"Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted."+"</span>");
-    fullpage_api.fitToSection();
+    fullpage_api.setFitToSection(true);
   })
   $("input[type='text']").on("click",function(){
     $(".sortedBrands").empty();
-    fullpage_api.fitToSection();
+    fullpage_api.setFitToSection(true);
   })
 
   $("input[type='text']").select(function(){
      $(".sortedBrands").empty();
-     fullpage_api.fitToSection();
+     fullpage_api.setFitToSection(true);
 });
   $("input[type='text']").keypress(function(){
   $(".sortedBrands").empty();
-  fullpage_api.fitToSection();
+  fullpage_api.setFitToSection(true);
 });
 } ); 
 
