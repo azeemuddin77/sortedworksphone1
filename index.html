@@ -164,10 +164,6 @@ function countDecrease(){
 // }); 
 
 $( function(){ 
-  var goFS = document.getElementById("goFS");
-  goFS.addEventListener("click", function() {
-      document.body.requestFullscreen();
-  }, false);
     $("#knowmore").on("click",function(){
     fullpage_api.moveTo('section2');
 })
@@ -838,6 +834,15 @@ function closeNav() {
     autoScrolling:true,
     scrollHorizontally: true,
     scrollingSpeed: 1000,
+    afterLoad: function(origin, destination, direction){
+     if(fullpage_api.getActiveSection().index==0){
+          document.exitFullscreen()
+          // document.body.cancelFullScreen()
+     }
+     else{
+         document.body.requestFullscreen();
+     }
+    },
   });
   fullpage_api.setAllowScrolling(true);
 
