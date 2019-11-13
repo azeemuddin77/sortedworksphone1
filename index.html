@@ -164,6 +164,10 @@ function countDecrease(){
 // }); 
 
 $( function(){ 
+    $(".contactform").on("click",function(){
+      alert("hello")
+      // window.location="https://sortedworksinc.com/contact.html";
+    })
     $("#knowmore").on("click",function(){
     fullpage_api.moveTo('section2');
 })
@@ -806,7 +810,7 @@ function closeNav() {
         </div>
      </div>
      <div class="sm-icons">
-          <div class="btn-on-smal-screen"><a href="contact.html" class="btn btn-outline-warning small-btn mb-4">WRITE TO US</a></div>
+          <div class="btn-on-smal-screen"><a href="./contact.html" class="btn btn-outline-warning small-btn mb-4" class="contactform">WRITE TO US</a></div>
           <a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as"><img id="facebook" class="mr-3" width="16px" height="16px" src="./Assets/facebook-white.png"></a>
           <a href="https://www.instagram.com/sortedworksinc/"><img id="insta" class="mr-3" width="16px" height="16px" src="./Assets/instagram-white.png"></a>
           <a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img id="linkedin" class="mr-3" width="16px" height="16px" src="./Assets/linkedin-white.png"></a> 
@@ -816,7 +820,7 @@ function closeNav() {
      <div class="bottom-spacing">
      </div>
   <div class="container d-flex justify-content-md-between justify-content-center align-items-center">
-    <a href="./contact.html" class="sm-button btn btn-outline-warning px-5">WRITE TO US</a>
+    <a href="./contact.html" class="sm-button btn btn-outline-warning px-5" class="contactform">WRITE TO US</a>
     <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition">Terms and condition</p>
     <p class="terms-conditionsfont copytermsfonts mt-md-3 mt-0 ">Copyright 2019 All rights reserved. </p>
   </div>
