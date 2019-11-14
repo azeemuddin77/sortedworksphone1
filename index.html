@@ -12,7 +12,7 @@
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700i&display=swap" rel="stylesheet">
   <link rel="short icon" href="Assets/sorted-favicon.png" type="image/png">
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="Assets/javascript/jquery.js"></script> 
   <script src="Assets/javascript/jqueryui.js"></script> 
   <title>Sorted Works</title>
@@ -20,6 +20,7 @@
   <link rel="stylesheet" type="text/css" href="fullpage.min.css" />
   <link rel="stylesheet" type="text/css" href="index.css">
   <script type="text/javascript" src="fullpage.min.js"></script>
+  <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"> -->
   
     <style>
@@ -150,7 +151,7 @@ $( function(){
   });
   $("ul").on("click","li",function(){
     $(".sortedBrands").empty();
-    $(".sortedBrands").append("<span>"+"Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted."+"</span>");
+    $(".sortedBrands").append('<span style="font-size:20px;">'+'Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted.<i class="em mb-2 ml-2 em---1" aria-role="presentation" aria-label="THUMBS UP SIGN"></i>'+'</span>');
     fullpage_api.setFitToSection(true);
   })
   $("input[type='text']").on("click",function(){
@@ -230,15 +231,9 @@ function closeNav() {
  </div>
  <!-- <div > -->
  <div class="text-center container-2 animated fadeInUp section" data-anchor="section2">
-    <!-- <div class="text-left" style="width:82%">
-      <svg height="4" width="40" class="sm-line">
-          <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
-      </svg>
-    </div> -->
-    <div style="height:100%" class="w-100 d-flex align-items-center justify-content-center">
+    <div style="height:100%" class="w-100 d-flex justify-content-center" >
       <div>
-       <!--  <h1 class="inputfie mt-5 sm-header border"><span class="waver d-none">👋</span><div><div style="width: 50px;height:3px;background-color: white;margin-bottom: 20px;" class="mx-md-0 mx-auto"></div><div>Hi There, Just look up what your brand needs to feel, Sorted!</div></div></h1>  -->
-         <div class="d-flex-col justify-content-center h-100 ">
+         <div class="d-flex-col justify-content-center h-100 " style="margin-top:120px;">
           <h1 class="inputfie mt-5 sm-header h2 "><span class="waver d-none">👋</span><div><div style="width: 40px;height:3px;background-color: white;margin-bottom: 24px;" class="mx-md-0 mx-auto"></div><div class="d-inline-block">Hi</div> there, just look up what your brand needs to feel, Sorted!</div></h1>
             <div class="searchbar margin-bottom1  mt-5 mx-auto w-100">
               <div class="row w-100 inputfie">
@@ -251,6 +246,7 @@ function closeNav() {
                 <div class="col-md-1 d-flex align-items-center justify-content-center">
                   <img class="smphone" width="20px" height="20px" src="./Assets/microphone1.svg" >
                 </div>
+                 <!-- <div class="sortedBrands w-100"></div> -->
               </div>  
               <div class="row">
                  <div class="sortedBrands col-12">
@@ -603,6 +599,7 @@ function closeNav() {
  <script type="text/javascript">
   new fullpage('#fullpage', {
     //options here
+    licenseKey: null,
     anchors: ['section1', 'section2', 'section3', 'section4'],
     navigation:true,
     autoScrolling:true,
