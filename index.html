@@ -59,6 +59,41 @@ function countDecrease(){
        $( ".container-"+ (count+1)).hide()
 }
 $( function(){ 
+  var lFollowX = 0,
+    lFollowY = 0,
+    x = 0,
+    y = 0,
+    friction = 1 / 30;
+
+function moveBackground() {
+  x += (lFollowX - x) * friction;
+  y += (lFollowY - y) * friction;
+  
+  translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+  $('.homesection').css({
+  // $('').css({
+    '-webit-transform': translate,
+    '-moz-transform': translate,
+    'transform': translate
+  });
+
+  window.requestAnimationFrame(moveBackground);
+}
+
+$(window).on('mousemove click', function(e) {
+
+  var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+  var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+  lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+  lFollowY = (10 * lMouseY) / 100;
+
+});
+
+moveBackground();
+
+
+
     $("#knowmore").on("click",function(){
     fullpage_api.moveTo('section2');
 })
@@ -233,7 +268,7 @@ function closeNav() {
  <div class="text-center container-2 animated fadeInUp section" data-anchor="section2">
     <div style="height:100%" class="w-100 d-flex justify-content-center" >
       <div>
-         <div class="d-flex-col justify-content-center h-100 " style="margin-top:120px;">
+         <div class="d-flex-col justify-content-center h-100 " style="margin-top:170px;">
           <h1 class="inputfie mt-5 sm-header h2 "><span class="waver d-none">👋</span><div><div style="width: 40px;height:3px;background-color: white;margin-bottom: 24px;" class="mx-md-0 mx-auto"></div><div class="d-inline-block">Hi</div> there, just look up what your brand needs to feel, Sorted!</div></h1>
             <div class="searchbar margin-bottom1  mt-5 mx-auto w-100">
               <div class="row w-100 inputfie">
