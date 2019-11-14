@@ -26,101 +26,9 @@
     body{
     background: #3C5377;
     }
-
-/* THE MAINCONTAINER HOLDS EVERYTHING */
-/*.maincontainer{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-}*/
-
-/* THE CARD HOLDS THE FRONT AND BACK FACES */
-/*.thecard{
-  position:relative;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: all 1.5s ease;
-}*/
-
-/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-/*.thecard:hover{
-  transform: rotateY(180deg);
-}*/
-
-
-/*.thefront{
-  width: 97px;
-  height: 97px;
-  background-repeat: no-repeat;
-  backface-visibility: hidden;
-  border-radius: 50%;
-  background-color: #ff0000;
-  
-  -webkit-box-shadow: 3px 3px 5px 5px rgba(100,0,0,1);
-  -moz-box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);
-  box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);
- 
-}*/
-
-/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
-/*.theback{
-  position: absolute;
-  top: 0;
-  left: 11px;
-  width: 97px;
-  height:97px;
-  backface-visibility: hidden;
-  overflow: hidden;
-  border-radius: 50%;
-  background-color: red;
-  transform: rotateY(180deg);
-  background-image: url("./Assets/01.disaster-management.png") ;
-  background-repeat: no-repeat;
-  -webkit-box-shadow: 3px 3px 5px 5px rgba(100,0,0,1);
-  -moz-box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);
-  box-shadow: 3px 3px 5px 5px rgba(0,0,0,1);
-}
-*/
-
-/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
-/*.thefront h1, .theback h1{
-  font-family: 'zilla slab', sans-serif;
-  padding: 30px;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
-}
-
-.thefront p, .theback p{
-  font-family: 'zilla slab', sans-serif;
-  padding: 30px;
-  font-weight: normal;
-  font-size: 12px;
-  text-align: center;
-}*/
-/*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
     </style>
   <script> 
-// $(window).load(function(){
- //  var setHeightOfDiv=$(window).height()-74;
-  // $(".presenting-section").css({"height":setHeightOfDiv+'px',"margin-top":"74px"});
-   // setTimeout(function(){
-   //  $('#overlay').remove();
-   // },2000)
-   // $( ".container-2" ).hide();
-   // $( ".container-3" ).hide();
-   // $( ".container-4" ).hide();
-// }); 
-
-count=1;
+  count=1;
 function countIncrease(){
   count++
        if(count==4){
@@ -130,10 +38,8 @@ function countIncrease(){
         count=4
         
        }
-       // $(".rotating-container").show();
        console.log(count)
        $( ".container-"+(count-1) ).hide();
-       // $( ".container-"+count ).slideDown( "slow" );
        $( ".container-"+count ).show();
        
 
@@ -148,40 +54,17 @@ function countDecrease(){
          $(".rotating-container").show();
        }
        console.log(count)
-       // $( ".container-"+count).slideDown( "slow" );
        $( ".container-"+count).show(  );
        $( ".container-"+ (count+1)).hide()
 }
-// $(window).bind('mousewheel', function(e){
-//     if(e.originalEvent.wheelDelta > 0)
-//     {
-//        countDecrease()
-//     }
-//     else
-//     { 
-//        countIncrease()
-//     }
-// }); 
-
 $( function(){ 
-    $(".contactform").on("click",function(){
-      alert("hello")
-      // window.location="https://sortedworksinc.com/contact.html";
-    })
     $("#knowmore").on("click",function(){
     fullpage_api.moveTo('section2');
 })
     $("#logo").on("click",function(){
     fullpage_api.moveTo('section1');
 })
-     $("body").keydown(function(event) {
-      if( event.which == 38 ){
-        countDecrease()
-      }
-      if(event.which == 40){
-        countIncrease()
-      }
-    });  
+    
     $("#next-block").hide(); 
    $("#previous").on("click",function(){
       $("#previous-block").show()
@@ -201,9 +84,7 @@ $( function(){
     $("#main-nav a").on('click', function (event) {
       if (this.hash !== "") {
         event.preventDefault();
-
         const hash = this.hash;
-
         $('html, body').animate({
           scrollTop: ($(hash).offset().top)-offset
         }, 800, function () {
@@ -301,17 +182,6 @@ function closeNav() {
 
 </script> 
 </head>
-<!-- <div id="overlay" class="d-flex align-items-center justify-content-center">
-     <img src="./Assets/ezgif.com-video-to-gif.gif" alt="Loading" /> -->
-  <!-- <div class="contain">
-      <div class="📦"></div>
-      <div class="📦"></div>
-      <div class="📦"></div>
-      <div class="📦"></div>
-      <div class="📦"></div>
-  </div> -->
-<!-- </div> -->
-
 <body id="main-nav" style="background-color: #0a0a0a;font-family: 'Josefin Sans', sans-serif;" class="text-white">
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:black !important;box-shadow: 0px 2px 2px rgba(0,0,0,0.25);"> 
   <a class="navbar-brand"><img id="logo" width="120px"   src="./Assets/SortedLogo.svg"></a>
@@ -345,9 +215,7 @@ function closeNav() {
   <a href="#">Contact</a>
 </div>
 
-<!-- <div class="presenting-section  d-flex align-items-center justify-content-center w-100" style="overflow-y: hidden;">   -->
 <div id="fullpage">  
- <!-- <div class="position-fixed fixed-bottom rotating-container"><img src="./Assets/Scroll.png" width="50px" class="float-right mr-3 mb-3 rotating"></div>  -->
  <div class="section homesection">
  <!-- <video class="container-1 animated fadeInUp w-100 border border-warning" autoplay muted loop id="myVideo"> -->
  <!-- <video style="min-height: 100%;min-width: 100%;" autoplay muted loop data-keepplaying>
@@ -635,103 +503,6 @@ function closeNav() {
           </div>
           <div class="col-2 col-md-0"></div>
         </div>
-      
-       <!--  <div class="row " >
-          <div class="col-4 circlepadding " style="height:102px">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"><p></p></div>
-                <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront" style="background-color:#ff6600;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ff6600;font-size:12px;"><span>Design</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding ">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#ffff00;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ffff00;font-size:12px;"><span>Digital</span></div>
-              </div>
-            </div>
-          </div>
-          </div> -->
-          <!-- <div class="maincontainer border">
-            <div class="thecard">
-              <div class="thefront"><p></p></div>
-              <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
-            </div>
-          </div>
-          <div class="maincontainer">
-            <div class="thecard">
-              <div class="thefront"><p></p></div>
-              <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
-            </div>
-          </div>
-          <div class="maincontainer">
-            <div class="thecard">
-              <div class="thefront"><p></p></div>
-              <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
-            </div>
-          </div> -->
-         <!--  <div class="row" >
-          <div class="col-4 circlepadding" style="height:102px">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#25ce21;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#25ce21;font-size:12px;"><span>Strategy</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#00aef4;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center text-center" style="background-color:#00aef4;font-size:12px;"><div>Web <br>Development</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#006ec4;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#006ec4;font-size:12px;"><span>Innovation</span></div>
-              </div>
-            </div>
-          </div>
-          </div>
-          <div class="row" >
-          <div class="col-4 circlepadding" style="height:102px">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#702aa1;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#702aa1;font-size:12px;" ><span>Branding</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#f4f4f4;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center"  style="background-color:#f4f4f4;font-size:12px;"><span>Production</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#282828;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#282828;font-size:12px;"><span class="align-self-center ">Sorted</span></div>
-              </div>
-            </div>
-          </div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -862,7 +633,6 @@ function closeNav() {
   crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
   crossorigin="anonymous"></script>
-<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   
 </body>
