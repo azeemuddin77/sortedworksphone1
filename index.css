@@ -437,7 +437,7 @@ body{
     }
 
 .homesection{
-  background-image:url("./Assets/Video.png");
+  background-image:url("./Assets/Video.jpg");
   background-repeat: no-repeat;
   background-size:cover;
 }  
@@ -505,7 +505,7 @@ body{
         right:80%;
       }
       .homesection{
-        background-image:url("./Assets/Videophone.png");
+        background-image:url("./Assets/Videophone.jpg");
         background-repeat: no-repeat;
         background-size:cover;
       } 
