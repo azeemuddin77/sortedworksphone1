@@ -837,14 +837,22 @@ function closeNav() {
     autoScrolling:true,
     scrollHorizontally: true,
     scrollingSpeed: 1000,
+    keyboardScrolling: true,
     afterLoad: function(origin, destination, direction){
-     if(fullpage_api.getActiveSection().index==0){
+     if(window.innerWidth<600){
+       if(fullpage_api.getActiveSection().index==0){
           document.exitFullscreen()
+          console.log(window.innerWidth)
           // document.body.cancelFullScreen()
      }
      else{
          document.body.requestFullscreen();
      }
+     } 
+     else{
+      
+     }
+     
     },
   });
   fullpage_api.setAllowScrolling(true);
