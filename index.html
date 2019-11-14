@@ -131,16 +131,16 @@ moveBackground();
 
     $("#facebook,#linkedin,#youtube,#insta").on("mouseenter",function(){
       var name=$(this).find("img").attr("src")
-      if(name=="./Assets/facebook-white.png"){
+      if(name=="./Assets/facebook-white.svg"){
         $(this).find("img").attr("src","./Assets/facebook-hover.svg")
       }
-      else if(name=="./Assets/instagram-white.png"){
+      else if(name=="./Assets/instagram-white.svg"){
         $(this).find("img").attr("src","./Assets/instagram-hover.svg")
       }
-      else if(name=="./Assets/linkedin-white.png"){
+      else if(name=="./Assets/linkedin-white.svg"){
        $(this).find("img").attr("src","./Assets/linkedin-hover.svg") 
       }
-      else if(name=="./Assets/youtube-white.png"){
+      else if(name=="./Assets/youtube-white.svg"){
         $(this).find("img").attr("src","./Assets/youtube-hover.svg")
       }
       else{
@@ -150,16 +150,16 @@ moveBackground();
     $("#facebook,#linkedin,#youtube,#insta").on("mouseleave",function(){
       var name=$(this).find("img").attr("src")
       if(name=="./Assets/facebook-hover.svg"){
-        $(this).find("img").attr("src","./Assets/facebook-white.png")
+        $(this).find("img").attr("src","./Assets/facebook-white.svg")
       }
       else if(name=="./Assets/instagram-hover.svg"){
-        $(this).find("img").attr("src","./Assets/instagram-white.png")
+        $(this).find("img").attr("src","./Assets/instagram-white.svg")
       }
       else if(name=="./Assets/linkedin-hover.svg"){
-       $(this).find("img").attr("src","./Assets/linkedin-white.png") 
+       $(this).find("img").attr("src","./Assets/linkedin-white.svg") 
       }
       else if(name=="./Assets/youtube-hover.svg"){
-        $(this).find("img").attr("src","./Assets/youtube-white.png")
+        $(this).find("img").attr("src","./Assets/youtube-white.svg")
       }
       else{
 
@@ -587,7 +587,9 @@ function closeNav() {
  
 </div>
 <div class="w-100  container-4 section">
-<div class="container pt-5 sm-textCenter animated fadeInUp">
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8"><div class=" pt-5 sm-textCenter animated fadeInUp">
     <div class="text-md-left text-center">
       <svg height="4" width="35">
           <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
@@ -599,7 +601,7 @@ function closeNav() {
           <h3 class="pb-3 ">Bangalore</h3>
           <p class="terms-conditionsfont">+91 9538 6010 12</p>
           <p style="line-height: 1.2"><small class="terms-conditionsfont">1/33 <br> Chancellor Chambers, Ulsoor Road <br> Bangalore, 560 042 </small></p>
-          <p style="font-size: 0.8rem" class="general-transition"><small><a href="https://www.google.com/maps/place/Sorted+Works+Inc+-Advertising+Agency+in+Ulsoor+Road/@12.9758398,77.6145833,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae17e8603bb611:0xedff77684d4e59b!8m2!3d12.9758398!4d77.616772" target="_blank" >VIEW ON MAP</a></small></p>
+          <div><p style="font-size: 0.8rem" class="general-transition d-inline-block"><small><a href="https://www.google.com/maps/place/Sorted+Works+Inc+-Advertising+Agency+in+Ulsoor+Road/@12.9758398,77.6145833,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae17e8603bb611:0xedff77684d4e59b!8m2!3d12.9758398!4d77.616772" target="_blank" >VIEW ON MAP</a></small></p></div>
         </div>
         <div class="width-on-sm-screen">
           <h3 class="pb-3">Mumbai</h3>
@@ -608,9 +610,9 @@ function closeNav() {
         </div>
         <div class="sm-address align-items-center">
           <h3 class="pb-3 ">Social Media</h3>
-          <p class="d-flex align-items-center general-transition" id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/facebook-white.png">Facebook</a></p>
-          <p id="insta" class="general-transition"><a href="https://www.instagram.com/sortedworksinc/" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/instagram-white.png">Instagram</a></p>
-          <p id="linkedin" class="general-transition"><a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/linkedin-white.png">LinkedIn</a></p>
+          <p class="d-flex align-items-center general-transition" id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/facebook-white.svg">Facebook</a></p>
+          <p id="insta" class="general-transition"><a href="https://www.instagram.com/sortedworksinc/" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/instagram-white.svg">Instagram</a></p>
+          <p id="linkedin" class="general-transition"><a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/linkedin-white.svg">LinkedIn</a></p>
           
         </div>
      </div>
@@ -620,16 +622,19 @@ function closeNav() {
           <a href="https://www.instagram.com/sortedworksinc/"><img id="insta" class="mr-3" width="16px" height="16px" src="./Assets/instagram-white.png"></a>
           <a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img id="linkedin" class="mr-3" width="16px" height="16px" src="./Assets/linkedin-white.png"></a> 
           <p class="mt-3 general-transition">Terms and condition</p>
-          <!-- <p>Copyright 2019 All rights reserved. </p> -->
         </div>
      <div class="bottom-spacing">
      </div>
-  <div class="container d-flex justify-content-md-between justify-content-center align-items-center">
+  <div class="container d-flex justify-content-md-between justify-content-center align-items-center px-0">
     <a href="./contact.html" class="sm-button btn btn-outline-warning px-5" class="contactform">WRITE TO US</a>
-    <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition">Terms and condition</p>
+    <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition">Terms and conditions</p>
+    <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition">Privacy Policy</p>
     <p class="terms-conditionsfont copytermsfonts mt-md-3 mt-0 ">Copyright 2019 All rights reserved. </p>
   </div>
-  </div>
+  </div></div>
+  <div class="col-md-2"></div>
+</div>  
+
   <img src="./Assets/sorted-energyLine.png" width="100%" style="position: absolute;bottom: 0;left: 0;">
  </div> 
 </div>
