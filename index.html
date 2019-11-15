@@ -21,7 +21,11 @@
   <link rel="stylesheet" type="text/css" href="index.css">
   <script type="text/javascript" src="fullpage.min.js"></script>
   <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"> -->
+    <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"> -->
   
     <style>
     body{
@@ -92,6 +96,18 @@ $(window).on('mousemove click', function(e) {
 
 moveBackground();
 
+
+$(".hidden-slider").hide();
+$(".previous-slide").on("click",function(){
+  $('.hidden-slider').hide('slide', {direction: 'right'}, 1000,function(){
+     $('.slider').show('slide',{direction:'left'},1000);
+  })
+})
+$(".next-slide").on("click",function(){
+  $('.slider').hide('slide', {direction: 'left'}, 1000,function(){
+     $('.hidden-slider').show('slide',{direction:'right'},1000);
+  })
+})
 
 
     $("#knowmore").on("click",function(){
@@ -453,7 +469,7 @@ function closeNav() {
     <div class="row">
       <div class="col-md-2 d-md-block d-none"></div>
       <div class="col-md-4 col-12 sm-textCenter">
-        <h1 id="work" class="we-got sm-header" style="line-height:1.3"><div><div class="mx-md-0 mx-auto mb-3" style="width:40px;height:3px;background-color:white;"></div><div style="font-size:2rem;">Flip the dots to know our Services. <span style="font-size: 15px;"><img class="ml-3 mb-2 d-md-inline-block d-none" src="./Assets/flipdotsrightarrow.png"></span></div></div></h1>
+        <h1 id="work" class="we-got sm-header" style="line-height:1.3"><div><div class="mx-md-0 mx-auto mb-3" style="width:40px;height:3px;background-color:white;"></div><div style="font-size:2rem;">Flip the dots to know our Services. <span style="font-size: 15px;"><img style="width:25px" class="ml-3 mb-2 d-md-inline-block d-none" src="./Assets/Arrow-Left-25px.svg"></span></div></div></h1>
         <p style="line-height: 1.7">
           Every decade had a WORD that <br> defined it. <br>
           The 60’s had ‘Groovy’. <br>
@@ -596,12 +612,30 @@ function closeNav() {
       </svg>
     </div>  
     <div class="mb-5"><h2 class="sm-header" id="contact">The Ones who Bought it.</h2></div>
-    <div class="d-flex justify-content-between justify-content-sm-between" style="height:200px;">
-       <div><a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/eatfit1.png"></a></div>
-       <div><a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/disruptlogo.png"></a></div>
-       <div><a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC.png"></a></div>
-    </div>
-    <div class="text-center"><span class=""><</span><span class="mx-4">03/06</span><span></span>></div>
+      
+      <div class="slider">
+      <div class="d-flex justify-content-between justify-content-sm-between" style="height:200px;">
+         <div><a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/eatfit1.png"></a></div>
+         <div><a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/disruptlogo.png"></a></div>
+         <div><a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SyncLogo.png"></a></div>
+      </div>
+      </div>
+      <div class="hidden-slider">
+      <div class="d-flex justify-content-between justify-content-sm-between" style="height:200px;">
+         <div><a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/RMZLogo.png"></a></div>
+         <div><a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/SYNC.png"></a></div>
+         <div><a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SlidersAndFriesLogo.png"></a></div>
+      </div>
+      </div>
+  
+    <!-- <div class="hidden-slider">
+      <div class="d-flex justify-content-between justify-content-sm-between slider" style="height:200px;">
+         <div><a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/eatfit1.png"></a></div>
+         <div><a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/disruptlogo.png"></a></div>
+         <div><a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC.png"></a></div>
+      </div>
+    </div> -->
+    <div class="text-center"><span class="previous-slide"><img style="width:16px" src="./Assets/Arrow-Left-16px.svg"></span><span class="mx-4">03/06</span><span class="next-slide"><img style="width:16px" src="./Assets/Arrow-Right-16px.svg"></span></div>
 
     
      <div class="bottom-spacing">
@@ -649,9 +683,9 @@ function closeNav() {
      </div>
      <div class="sm-icons">
           <div class="btn-on-smal-screen"><a href="./contact.html" class="btn btn-outline-warning small-btn mb-4" class="contactform">WRITE TO US</a></div>
-          <a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as"><img id="facebook" class="mr-3" width="16px" height="16px" src="./Assets/facebook-white.png"></a>
-          <a href="https://www.instagram.com/sortedworksinc/"><img id="insta" class="mr-3" width="16px" height="16px" src="./Assets/instagram-white.png"></a>
-          <a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img id="linkedin" class="mr-3" width="16px" height="16px" src="./Assets/linkedin-white.png"></a> 
+          <a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as"><img id="facebook" class="mr-3" width="16px" height="16px" src="./Assets/facebook-white.svg"></a>
+          <a href="https://www.instagram.com/sortedworksinc/"><img id="insta" class="mr-3" width="16px" height="16px" src="./Assets/instagram-white.svg"></a>
+          <a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img id="linkedin" class="mr-3" width="16px" height="16px" src="./Assets/linkedin-white.svg"></a> 
           <p class="mt-3 general-transition">Terms and condition</p>
         </div>
      <div class="bottom-spacing">
@@ -699,7 +733,7 @@ function closeNav() {
   });
   fullpage_api.setAllowScrolling(true);
 
-</script>   
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
   crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
