@@ -102,11 +102,13 @@ $(".previous-slide").on("click",function(){
   $('.hidden-slider').hide('slide', {direction: 'right'}, 1000,function(){
      $('.slider').show('slide',{direction:'left'},1000);
   })
+  $('.number').text("03/06")
 })
 $(".next-slide").on("click",function(){
   $('.slider').hide('slide', {direction: 'left'}, 1000,function(){
      $('.hidden-slider').show('slide',{direction:'right'},1000);
   })
+  $('.number').text("06/06")
 })
 
 
@@ -635,7 +637,7 @@ function closeNav() {
          <div><a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC.png"></a></div>
       </div>
     </div> -->
-    <div class="text-center"><span class="previous-slide"><img style="width:16px" src="./Assets/Arrow-Left-16px.svg"></span><span class="mx-4">03/06</span><span class="next-slide"><img style="width:16px" src="./Assets/Arrow-Right-16px.svg"></span></div>
+    <div class="text-center"><span class="previous-slide"><img style="width:16px" src="./Assets/Arrow-Left-16px.svg"></span><span class="mx-4 number">03/06</span><span class="next-slide"><img style="width:16px" src="./Assets/Arrow-Right-16px.svg"></span></div>
 
     
      <div class="bottom-spacing">
