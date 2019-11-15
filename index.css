@@ -6,7 +6,15 @@
       padding:5px; 
      
     }
-
+.slick-dots li.slick-active button:before {
+    color:#fff !important;
+}
+.slick-dots li button:before {
+    color:#c4c4c4 !important;
+}
+button.slick-prev.slick-arrow.ui-btn.ui-shadow.ui-corner-all::before,button.slick-next.slick-arrow.ui-btn.ui-shadow.ui-corner-all::before{
+  display: none;
+}
      .searchbar{
     height: 40px;
     width:80%;
