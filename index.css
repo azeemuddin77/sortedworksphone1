@@ -18,6 +18,9 @@ button.slick-prev.slick-arrow::before{
 button.slick-next.slick-arrow::before{
   display: none !important; 
 }
+.slick-track{
+  margin-bottom: 50px !important;
+}
      .searchbar{
     height: 40px;
     width:80%;
