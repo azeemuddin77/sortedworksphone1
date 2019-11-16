@@ -7036,7 +7036,7 @@ function o(n, a, l) {
         jQuery.fn.phoneMask = function() {
             return $(this).each(function() {
                 $(this).inputmask({
-                    mask: ["+7 (999) 999-99-99", "+38 (099) 999-99-99", "+375 (99) 999-99-99"],
+                    mask: ["(999) 999-99-99", "(099) 999-99-99", "(99) 999-99-99"],
                     showMaskOnHover: !1
                 })
             })

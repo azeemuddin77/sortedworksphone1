@@ -503,6 +503,9 @@ body{
 
 
      @media (max-width: 767px){
+      .slider img{
+        width:50px;
+      }
       .paddingleftofcir{
         padding-left: 0px;
       }
