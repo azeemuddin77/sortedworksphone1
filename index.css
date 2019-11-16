@@ -12,7 +12,7 @@
 .slick-dots li button:before {
     color:#c4c4c4 !important;
 }
-button.slick-prev.slick-arrow::before,button.slick-next.slick-arrow.ui-btn.ui-shadow.ui-corner-all::before{
+button.slick-prev.slick-arrow::before,button.slick-next.slick-arrow::before{
   display: none !important; 
 }
      .searchbar{
