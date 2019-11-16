@@ -13,7 +13,7 @@
     color:#c4c4c4 !important;
 }
 button.slick-prev.slick-arrow::before,button.slick-next.slick-arrow.ui-btn.ui-shadow.ui-corner-all::before{
-  display: none;
+  display: none !important; 
 }
      .searchbar{
     height: 40px;
