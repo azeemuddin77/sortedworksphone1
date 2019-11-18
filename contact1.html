@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style1.css">
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+       <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:black !important;box-shadow: 0px 2px 2px rgba(0,0,0,0.25);"> 
+  <a class="navbar-brand"><img id="logo" width="100px"   src="./Assets/SortedLogo.svg"></a>
+ 
+  </nav>
+      <form action="index.html" class="login-form">
+        <h1 class="text-left text-white">Holla at us</h1>
+
+        <div class="txtb">
+          <input type="text" required>
+          <span data-placeholder="Name"></span>
+        </div>
+
+        <div class="d-none d-md-block border">
+          <div class="w-100 border d-flex justify-content-between">
+            <div class="input-width ">
+              <div class="txtb">
+                <input type="text" required>
+                <span data-placeholder="Phone"></span>
+              </div>
+            </div>
+            <div class="input-width ">
+              <div class="txtb">
+                <input type="email" required>
+                <span data-placeholder="Email"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="txtb">
+          <input type="text" required>
+          <span data-placeholder="What can we do for you"></span>
+        </div>
+
+        <input type="submit" class="logbtn float-right contact-form-button-mg sm-button btn btn-outline-light px-5 " value="SUBMIT">
+
+        
+
+      </form>
+
+      <script type="text/javascript">
+      $(".txtb input").on("focus",function(){
+        $(this).addClass("focus");
+      });
+
+      $(".txtb input").on("blur",function(){
+        if($(this).val() == "")
+        $(this).removeClass("focus");
+      });
+
+      </script>
+
+
+ 
+
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  crossorigin="anonymous"></script>
+</html>
