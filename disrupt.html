@@ -51,11 +51,11 @@
 
     <div class="row mt-5 mt-md-0 mb-2" style="height: 50px;">
       <div class="col-xs-12 col-md-6 d-flex justify-content-around">
-       <p id="insta" class="share-buttons-width d-flex align-items-center"><a href="https://www.instagram.com/sortedworksinc/" target="_blank"><img class="mr-2"  width="24px" height="24px" src="./Assets/instagram-white.png">Instagram</a></p>
-       <p id="linkedin" class="share-buttons-width d-flex align-items-center" ><a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img class="mr-2" width="24px" height="24px" src="./Assets/linkedin-white.png">LinkedIn</a></p> 
+       <p id="insta" class="share-buttons-width d-flex align-items-center"><a href="https://www.instagram.com/sortedworksinc/" target="_blank"><img class="mr-2"  width="24px" height="24px" src="./Assets/instagram-white.svg">Instagram</a></p>
+       <p id="linkedin" class="share-buttons-width d-flex align-items-center" ><a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img class="mr-2" width="24px" height="24px" src="./Assets/linkedin-white.svg">LinkedIn</a></p> 
       </div>
       <div class="col-xs-12 col-md-6 d-flex justify-content-around"> 
-        <p class="share-buttons-width d-flex align-items-center" id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-2" width="24px" height="24px" src="./Assets/facebook-white.png">Facebook</a></p>
+        <p class="share-buttons-width d-flex align-items-center" id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-2" width="24px" height="24px" src="./Assets/facebook-white.svg">Facebook</a></p>
         <p id="youtube" class="share-buttons-width d-flex align-items-center"><img class="mr-2" width="24px" height="24px" src="./Assets/youtube-white.png">Youtube</p>
       </div>
     </div>
@@ -91,13 +91,13 @@
     $(function(){
       $("#facebook,#linkedin,#youtube,#insta").on("mouseenter",function(){
       var name=$(this).find("img").attr("src")
-      if(name=="./Assets/facebook-white.png"){
+      if(name=="./Assets/facebook-white.svg"){
         $(this).find("img").attr("src","./Assets/facebook-hover.svg")
       }
-      else if(name=="./Assets/instagram-white.png"){
+      else if(name=="./Assets/instagram-white.svg"){
         $(this).find("img").attr("src","./Assets/instagram-hover.svg")
       }
-      else if(name=="./Assets/linkedin-white.png"){
+      else if(name=="./Assets/linkedin-white.svg"){
        $(this).find("img").attr("src","./Assets/linkedin-hover.svg") 
       }
       else if(name=="./Assets/youtube-white.png"){
@@ -110,13 +110,13 @@
     $("#facebook,#linkedin,#youtube,#insta").on("mouseleave",function(){
       var name=$(this).find("img").attr("src")
       if(name=="./Assets/facebook-hover.svg"){
-        $(this).find("img").attr("src","./Assets/facebook-white.png")
+        $(this).find("img").attr("src","./Assets/facebook-white.svg")
       }
       else if(name=="./Assets/instagram-hover.svg"){
-        $(this).find("img").attr("src","./Assets/instagram-white.png")
+        $(this).find("img").attr("src","./Assets/instagram-white.svg")
       }
       else if(name=="./Assets/linkedin-hover.svg"){
-       $(this).find("img").attr("src","./Assets/linkedin-white.png") 
+       $(this).find("img").attr("src","./Assets/linkedin-white.svg") 
       }
       else if(name=="./Assets/youtube-hover.svg"){
         $(this).find("img").attr("src","./Assets/youtube-white.png")
