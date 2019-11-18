@@ -596,6 +596,9 @@ body{
 .input-width{
   width:40%;
 }
+.flip-headline{
+  font-size: 24px;
+}
 
 /*///////////////////////////////*/
 
@@ -607,6 +610,11 @@ body{
 
 
      @media (max-width: 767px){
+
+
+      .flip-headline{
+        font-size:inherit;
+      }
 
       .login-form{
         width: 100%;
@@ -625,7 +633,7 @@ body{
         width:100%;
       }
       .slider img{
-        width:50px;
+        width:65px;
       }
       .paddingleftofcir{
         padding-left: 0px;

@@ -67,22 +67,9 @@ $( function(){
   infinite: true,
   slidesToShow: 3,
   dots: true,
-  // prevArrow: $('.previous-slide'),
-  // nextArrow: $('.next-slide'),
   autoplay: true,
   autoplaySpeed: 2000,
 
-  //   responsive: [
-  //   {
-  //     breakpoint: 600,
-  //     settings: {
-  //       arrows: false,
-  //       centerMode: true,
-  //       centerPadding: '40px',
-  //       slidesToShow: 1
-  //     }
-  //   }
-  // ]
 });
     
 
@@ -119,22 +106,6 @@ $(window).on('mousemove click', function(e) {
 });
 
 moveBackground();
-
-
-// $(".hidden-slider").hide();
-// $(".previous-slide").on("click",function(){
-//   $('.hidden-slider').hide('slide', {direction: 'right'}, 1000,function(){
-//      $('.slider').show('slide',{direction:'left'},1000);
-//   })
-//   $('.number').text("03/06")
-// })
-// $(".next-slide").on("click",function(){
-//   $('.slider').hide('slide', {direction: 'left'}, 1000,function(){
-//      $('.hidden-slider').show('slide',{direction:'right'},1000);
-//   })
-//   $('.number').text("06/06")
-// })
-
 
     $("#knowmore").on("click",function(){
     fullpage_api.moveTo('section2');
@@ -249,12 +220,10 @@ moveBackground();
 function openNav() {
   document.getElementById("mySidenav").style.width = "300px";
   document.body.style.backgroundColor = "black";
-  // $("#openbutton").empty().append(' <a href="javascript:void(0)" class="closebtn" id="close" onclick="closeNav()">&times;</a>')
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  // document.body.style.backgroundColor = "white";
 }
 
 
@@ -299,11 +268,6 @@ function closeNav() {
 
 <div id="fullpage">  
  <div class="section homesection">
- <!-- <video class="container-1 animated fadeInUp w-100 border border-warning" autoplay muted loop id="myVideo"> -->
- <!-- <video style="min-height: 100%;min-width: 100%;" autoplay muted loop data-keepplaying>
-            <source src="./Assets/HomePageVideo3_Comp.mov" type="video/mp4">
- </video> -->
- <!-- <img src="./Assets/Video.png" width="100%"> -->
  <div class="mb-2 mb-md-3 pr-4 w-100" style="position: absolute;bottom: 0">
   <div class="text-right text-md-center mb-5" id="knowmore"><span id="knowmorehover"><a href="#section2"><span class="d-md-none d-inline-block">Swipe</span> 
     <span class="d-md-none d-inline-block">To</span> Know More <img src="./Assets/down.png"></a></span></div>
@@ -340,180 +304,28 @@ function closeNav() {
      </div>
     
  </div>
-  <!-- </div>  -->
-<!-- <div class="container-3 animated fadeInUp section">
-<div class="container_fluid mb-2"  >
-  <div class="container text-left d-flex justify-content-between" style="max-height: 100%">
-    <div class="row ">
-      <div class="col-md-6 col-sm-6 col-12 sm-textCenter" style="max-height:330px;overflow: hidden">
-        <div class="mx-auto text-left sm-hide" style="width:100%">
-        <svg height="10" width="42" class="sm-line tagsm-line">
-            <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
-        </svg>
-      </div>
-        <h1 id="work" class="we-got sm-header sm-hide" style="line-height:1.5">We got the whole  nine <br> yards, Sorted!</h1>
 
-    <div class="tag mx-auto pl-4">
-      <div class="text-left" style="width:80%">
-        <svg height="5" width="28">
-        <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
-        </svg>
-      </div>
-        <h1 class="text-left font-weight-bold sm-header" style="line-height:1.5">We got the whole nine yards, Sorted!</h1>
-    </div>
-        <p class="live">To live up to the true potential of an Oh-so-promising name, we are a full-blown agency based out of Bangalore. With the audacious vigour to derive an insight, only to liberate it in the unsuspecting world in the most strikingly original form is what we feel strongly about. By blurring the lines between the various facets of communication, we aspire to provide the collective force of Advertising under one roof!</p> 
-
-      </div>
-      <div class="col-md-2  col-sm-none">
-      </div>
-      <div class="col-md-4  col-sm-6 col-12 sm-circles" >
-        <div class="row " >
-          <div class="col-4 circlepadding " style="height:102px">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"><p></p></div>
-                <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront" style="background-color:#ff6600;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ff6600;font-size:12px;"><span>Design</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding ">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#ffff00;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ffff00;font-size:12px;"><span>Digital</span></div>
-              </div>
-            </div>
-          </div>
-          </div>
-          <div class="row" >
-          <div class="col-4 circlepadding" style="height:102px">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#25ce21;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#25ce21;font-size:12px;"><span>Strategy</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#00aef4;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center text-center" style="background-color:#00aef4;font-size:12px;"><div>Web <br>Development</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#006ec4;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#006ec4;font-size:12px;"><span>Innovation</span></div>
-              </div>
-            </div>
-          </div>
-          </div>
-          <div class="row" >
-          <div class="col-4 circlepadding" style="height:102px">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#702aa1;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#702aa1;font-size:12px;" ><span>Branding</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#f4f4f4;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center"  style="background-color:#f4f4f4;font-size:12px;"><span>Production</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 circlepadding">
-            <div class="maincontainer">
-              <div class="thecard">
-                <div class="thefront"  style="background-color:#282828;"><p></p></div>
-                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#282828;font-size:12px;"><span class="align-self-center ">Sorted</span></div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-        
-    </div>
-  </div>
-  
-
-<div class="container">
-  <div class="mx-auto d-flex justify-content-between text-center mb-2" style="width: 100%">
-    <div class="" style="width: 20%">
-      <img src="./Assets/Arrow-Left.svg" id="previous">
-    </div>  
-    <div class="d-flex align-self-center justify-content-center" style="width: 20%" id="number">
-    03/06
-    </div>
-    <div style="width: 20%">
-      <img src="./Assets/Arrow-Right.svg" id='next' >
-    </div>  
-  </div>  
-</div>
- 
-
-<div class="container">
-  <div class="row" id="previous-block">
-    <div class="col-12 col-md-4 text-md-left text-center mb-5">
-      <a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/eatfit1.png"></a>
-    </div>
-    <div class="col-12 col-md-4 text-md-center text-center mb-3">
-      <a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/disruptlogo.png"></a>
-    </div>
-    <div class="col-12 col-md-4 text-center">
-      <a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC.png"></a>
-    </div>
-  </div>
-
-  <div class="row" id="next-block">
-    <div class="col-12 col-md-4 text-md-left text-center mb-5">
-      <a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/RMZ.png"></a>
-    </div>
-    <div class="col-12 col-md-4 text-md-center text-center mb-3">
-      <a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/SlidersAndFries.png"></a>
-    </div>
-    <div class="col-12 col-md-4 text-center">
-      <a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC1.png"></a>
-    </div>
-  </div>
-</div>
-</div> -->
 <div class="container-3 animated fadeInUp section">
 <div class="container_fluid" style="margin-top: 4rem;">
   <div class="container">
     <div class="row">
-      <div class="col-md-2 d-md-block d-none"></div>
-      <div class="col-md-4 col-12 sm-textCenter">
-        <h1 id="work" class="we-got sm-header" style="line-height:1.3"><div><div class="mx-md-0 mx-auto mb-3" style="width:40px;height:3px;background-color:white;"></div><div style="font-size:2rem;">Flip the dots to know our Services. <span style="font-size: 15px;"><img style="width:25px" class="ml-3 mb-2 d-md-inline-block d-none" src="./Assets/Arrow-Left-25px.svg"></span></div></div></h1>
-        <p style="line-height: 1.7">
+      <div class="col-md-1 d-md-block d-none"></div>
+      <div class="col-md-5 col-12 sm-textCenter">
+        <h1 id="work" class="we-got sm-header" style="line-height:1.3"><div><div class="mx-md-0 mx-auto mb-3" style="width:40px;height:3px;background-color:white;"></div><div class="flip-headline"><span class="d-none d-md-block">Flip the dots to know our Services.</span> <span style="font-size: 15px;"><img style="width:25px" class="ml-3 mb-2 d-md-inline-block d-none" src="./Assets/Arrow-Left-25px.svg"></span></div></div></h1>
+        <p style="line-height: 1.7;font-size:20px;">
           Every decade had a WORD that <br> defined it. <br>
           The 60’s had ‘Groovy’. <br>
           The 70’s had ‘Dig’. <br>
           The 80’s had ‘Rad’. <br>
           The 90’s had ‘Wicked’. <br>
           The 2000’s had ‘Sweet’.<br>
-          TODAY WE HAVE, SORTED! <br><br>
-          
+          TODAY WE HAVE, <span style="font-size: 24px;">SORTED!</span> <br>
+          <span class="d-md-none d-block">Flip the dots to know our Services.</span>
     
         </p> 
 
       </div>
-     
+     <div class="col-md-1 d-md-block d-none"></div>
       <div class="col-md-4 col-12 d-flex-col justify-content-center">
         <div class="row">
           <div class="col-2 col-md-0"></div>
@@ -582,54 +394,12 @@ function closeNav() {
           <div class="col-2 col-md-0"></div>
         </div>
         </div>
-      <div class="col-md-2 d-none d-md-block">
+      <div class="col-md-1 d-none d-md-block">
       </div>
       </div>
     </div>
   </div>
 
-  
-
-<!-- <div class="container">
-  <div class="mx-auto d-flex justify-content-between text-center mb-2" style="width: 100%">
-    <div class="" style="width: 20%">
-      <img src="./Assets/Arrow-Left.svg" id="previous">
-    </div>  
-    <div class="d-flex align-self-center justify-content-center" style="width: 20%" id="number">
-    03/06
-    </div>
-    <div style="width: 20%">
-      <img src="./Assets/Arrow-Right.svg" id='next' >
-    </div>  
-  </div>  
-</div>
-  -->
-<!-- 
-<div class="container">
-  <div class="row" id="previous-block">
-    <div class="col-12 col-md-4 text-md-left text-center mb-5">
-      <a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/eatfit1.png"></a>
-    </div>
-    <div class="col-12 col-md-4 text-md-center text-center mb-3">
-      <a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/disruptlogo.png"></a>
-    </div>
-    <div class="col-12 col-md-4 text-center">
-      <a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC.png"></a>
-    </div>
-  </div>
-
-  <div class="row" id="next-block">
-    <div class="col-12 col-md-4 text-md-left text-center mb-5">
-      <a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/RMZ.png"></a>
-    </div>
-    <div class="col-12 col-md-4 text-md-center text-center mb-3">
-      <a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/SlidersAndFries.png"></a>
-    </div>
-    <div class="col-12 col-md-4 text-center">
-      <a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC1.png"></a>
-    </div>
-  </div>
-</div> -->
  
 </div>
 <div class="w-100  container-4 section">
@@ -642,29 +412,7 @@ function closeNav() {
       </svg>
     </div>  
     <div class="mb-5"><h2 class="sm-header" id="contact">The Ones who Bought it.</h2></div>
-      
-      <!-- <div class="slider">
-      <div class="d-flex justify-content-between justify-content-sm-between" style="height:200px;">
-         <div><a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/eatfit1.png"></a></div>
-         <div><a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/disruptlogo.png"></a></div>
-         <div><a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SyncLogo.png"></a></div>
-      </div>
-      </div>
-      <div class="hidden-slider">
-      <div class="d-flex justify-content-between justify-content-sm-between" style="height:200px;">
-         <div><a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/RMZLogo.png"></a></div>
-         <div><a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/SYNC.png"></a></div>
-         <div><a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SlidersAndFriesLogo.png"></a></div>
-      </div>
-      </div> -->
-  
-    <!-- <div class="hidden-slider">
-      <div class="d-flex justify-content-between justify-content-sm-between slider" style="height:200px;">
-         <div><a href="eatfit.html"><img style="width:150px;height:150px" src="./Assets/eatfit1.png"></a></div>
-         <div><a href="disrupt.html"><img style="width:150px;height:150px" src="./Assets/disruptlogo.png"></a></div>
-         <div><a href="counterculture.html" ><img class="float-md-right" style="width:150px;height:150px" src="./Assets/SYNC.png"></a></div>
-      </div>
-    </div> -->
+     
     <div class="slider" >
         <!--  <div ><a href="eatfit.html"><img class="mx-auto" src="./Assets/eatfit1.png"></a></div>
          <div ><a href="disrupt.html"><img class="mx-auto"  src="./Assets/disruptlogo.png"></a></div>
@@ -672,8 +420,6 @@ function closeNav() {
          <div ><a href="eatfit.html"><img class="mx-auto"  src="./Assets/RMZLogo.png"></a></div>
          <div ><a href="disrupt.html"><img class="mx-auto" src="./Assets/SYNC.png"></a></div>
          <div ><a href="counterculture.html" ><img class="mx-auto" src="./Assets/SlidersAndFriesLogo.png"></a></div> -->
-
-
          <div ><img class="mx-auto" src="./Assets/eatfit1.png"></div>
          <div ><img class="mx-auto"  src="./Assets/disruptlogo.png"></div>
          <div ><img class="mx-auto"  src="./Assets/SYNCLogo.png"></div>
@@ -690,11 +436,7 @@ function closeNav() {
   </div></div>
   <div class="col-md-2"></div>
 </div>  
-
  </div>
-
-
-
   <div class="w-100  container-4 section ">
 <div class="row">
   <div class="col-md-2"></div>
@@ -763,16 +505,13 @@ function closeNav() {
        if(fullpage_api.getActiveSection().index==0){
           document.exitFullscreen()
           console.log(window.innerWidth)
-          // document.body.cancelFullScreen()
      }
      else{
          document.body.requestFullscreen();
      }
      } 
      else{
-      
      }
-     
     },
   });
   fullpage_api.setAllowScrolling(true);
