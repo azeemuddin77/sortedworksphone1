@@ -409,6 +409,7 @@ body{
   right: 0;
   background-color: black;
   overflow-x: hidden;
+  overflow-y: hidden;
   transition: 0.5s;
   padding-top: 60px;
 }
