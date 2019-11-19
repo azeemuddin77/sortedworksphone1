@@ -449,15 +449,18 @@ function closeNav() {
     <div class="mb-5"><h2 class="sm-header" id="contact">Let's Get You, Sorted!</h2></div>
     <div class="d-flex justify-content-between justify-content-sm-between" style="height:200px;">
         <div class="width-on-sm-screen">
-          <h3 class="pb-3 ">Bangalore</h3>
+          <h3 class="pb-3 d-md-block d-none">Bangalore</h3>
+          <h5 class="pb-3 d-block d-md-none">Bangalore</h5>
           <p class="terms-conditionsfont">+91 9538 6010 12</p>
           <p style="line-height: 1.2"><small class="terms-conditionsfont">1/33 <br> Chancellor Chambers, Ulsoor Road <br> Bangalore, 560 042 </small></p>
           <div><p style="font-size: 0.8rem" class="general-transition d-inline-block"><small><a href="https://www.google.com/maps/place/Sorted+Works+Inc+-Advertising+Agency+in+Ulsoor+Road/@12.9758398,77.6145833,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae17e8603bb611:0xedff77684d4e59b!8m2!3d12.9758398!4d77.616772" target="_blank" >VIEW ON MAP</a></small></p></div>
         </div>
         <div class="width-on-sm-screen">
-          <h3 class="pb-3">Mumbai</h3>
+          <h3 class="pb-3 d-md-block d-none">Mumbai</h3>
+          <h5 class="pb-3 d-block d-md-none">Mumbai</h5>
           <p class="terms-conditionsfont">+91 9773 0052 90</p><br>
-          <p class="terms-conditionsfont">contact@sortedworksinc.com</p><br><br>
+          <p class="terms-conditionsfont">contact@sortedworksinc.com</p>
+          <div class="btn-on-smal-screen"><a href="./contact.html" class="btn btn-outline-warning small-btn mb-4 contactform">WRITE TO US </a></div>
         </div>
         <div class="sm-address align-items-center">
           <h3 class="pb-3 ">Social Media</h3>
@@ -468,11 +471,11 @@ function closeNav() {
         </div>
      </div>
      <div class="sm-icons">
-          <div class="btn-on-smal-screen"><a href="./contact.html" class="btn btn-outline-warning small-btn mb-4" class="contactform">WRITE TO US</a></div>
+          <h5 class="mb-4">Social Media</h5>
           <a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as"><img id="facebook" class="mr-3" width="16px" height="16px" src="./Assets/facebook-white.svg"></a>
           <a href="https://www.instagram.com/sortedworksinc/"><img id="insta" class="mr-3" width="16px" height="16px" src="./Assets/instagram-white.svg"></a>
           <a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img id="linkedin" class="mr-3" width="16px" height="16px" src="./Assets/linkedin-white.svg"></a> 
-          <p class="mt-3 general-transition">Terms and condition</p>
+          <p class="mt-4 general-transition"><span class="float-left ml-4">Terms and condition</span><span class="float-right mr-4">Copyright 2019 All rights reserved. </span></p>
         </div>
      <div class="bottom-spacing">
      </div>
@@ -480,7 +483,7 @@ function closeNav() {
     <a href="./contact.html" class="sm-button btn btn-outline-warning px-5" class="contactform">WRITE TO US</a>
     <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition">Terms and conditions</p>
     <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition">Privacy Policy</p>
-    <p class="terms-conditionsfont copytermsfonts mt-md-3 mt-0 ">Copyright 2019 All rights reserved. </p>
+    <p class="terms-conditionsfont copytermsfonts mt-md-3 mt-0 d-md-block d-none">Copyright 2019 All rights reserved. </p>
   </div>
   </div></div>
   <div class="col-md-2"></div>
@@ -489,10 +492,8 @@ function closeNav() {
   <img src="./Assets/sorted-energyLine.png" width="100%" style="position: absolute;bottom: 0;left: 0;">
  </div> 
 </div>
-<!-- </div> -->
  <script type="text/javascript">
   new fullpage('#fullpage', {
-    //options here
     licenseKey: null,
     anchors: ['section1', 'section2', 'section3', 'section4'],
     navigation:true,
