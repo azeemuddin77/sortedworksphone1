@@ -548,7 +548,10 @@ body{
 
      @media (max-width: 767px){
       .formmartop{
-        margin-top:0px;
+        margin-top:50px;
+      }
+      .formmartop1{
+        margin-top:170px;
       }
 
       .flip-headline{
