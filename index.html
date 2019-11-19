@@ -194,17 +194,17 @@ moveBackground();
     }
   }); 
 
-  $('input[type="text"]').blur(function() {
-    $(window).scrollTop(0,0);
-  });
+ 
   $("ul").on("click","li",function(){
     $(".sortedBrands").empty();
     $(".sortedBrands").append('<span style="font-size:20px;">'+'Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted.<i class="em mb-2 ml-2 em---1" aria-role="presentation" aria-label="THUMBS UP SIGN"></i>'+'</span>');
     fullpage_api.setFitToSection(true);
+    fullpage_api.moveSectionDown();
   })
   $("input[type='text']").on("click",function(){
     $(".sortedBrands").empty();
     fullpage_api.setFitToSection(true);
+
   })
 
   $("input[type='text']").select(function(){
@@ -265,8 +265,8 @@ function closeNav() {
 <div id="fullpage">  
  <div class="section homesection">
  <div class="mb-2 mb-md-3 pr-4 w-100" style="position: absolute;bottom: 0">
-  <div class="text-right text-md-center mb-5" id="knowmore"><span id="knowmorehover"><a href="#section2"><span class="d-md-none d-inline-block">Swipe</span> 
-    <span class="d-md-none d-inline-block">To</span> Know More <img src="./Assets/down.png"></a></span></div>
+  <div class="text-right text-md-center mb-5" id="knowmore"><span id="knowmorehover"><a href="#section2">
+    Worth the Scroll <br><img src="./Assets/down.png"></a></span></div>
       
      </div>
  </div>
@@ -291,7 +291,7 @@ function closeNav() {
               </div>  
               <div class="row">
                  <div class="sortedBrands col-12">
-                    <span style="font-size: 20px;">Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted.</span>
+
                  </div> 
               </div>
             </div>
@@ -494,14 +494,13 @@ function closeNav() {
     anchors: ['section1', 'section2', 'section3', 'section4'],
     navigation:true,
     autoScrolling:true,
-    scrollHorizontally: true,
+    scrollHorizontally:true,
     scrollingSpeed: 1000,
     keyboardScrolling: true,
     afterLoad: function(origin, destination, direction){
      if(window.innerWidth<600){
        if(fullpage_api.getActiveSection().index==0){
           document.exitFullscreen()
-          console.log(window.innerWidth)
      }
      else{
          document.body.requestFullscreen();
