@@ -542,10 +542,14 @@ body{
 .flip-headline{
   font-size: 24px;
 }
-
+.formmartop{
+  margin-top: 170px;
+}
 
      @media (max-width: 767px){
-
+      .formmartop{
+        margin-top:0px;
+      }
 
       .flip-headline{
         font-size:inherit;

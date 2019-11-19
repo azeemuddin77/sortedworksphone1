@@ -275,7 +275,7 @@ function closeNav() {
  <div class="text-center container-2 animated fadeInUp section fp-auto-height-responsive" data-anchor="section2">
     <div style="height:100%" class="w-100 d-flex justify-content-center" >
       <div>
-         <div class="border d-flex-col justify-content-center" style="margin-top:170px;">
+         <div class="border d-flex-col justify-content-center formmartop">
           <h1 class="inputfie mt-5 sm-header h2 "><span class="waver d-none">👋</span><div><div style="width: 40px;height:3px;background-color: white;margin-bottom: 24px;" class="mx-md-0 mx-auto"></div><div class="d-inline-block">Hi</div> there, just look up what your brand needs to feel, Sorted!</div></h1>
             <div class="searchbar margin-bottom1  mt-5 mx-auto w-100">
               <div class="row w-100 inputfie">
@@ -500,9 +500,6 @@ function closeNav() {
     scrollHorizontally:true,
     scrollingSpeed: 1000,
     keyboardScrolling: true,
-    afterResize: function(width, height){
-      alert(width , height)
-    },
     afterLoad: function(origin, destination, direction){
      if(window.innerWidth<600){
        if(fullpage_api.getActiveSection().index==0){
