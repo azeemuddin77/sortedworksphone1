@@ -498,6 +498,9 @@ function closeNav() {
     scrollHorizontally:true,
     scrollingSpeed: 1000,
     keyboardScrolling: true,
+    afterResize: function(width, height){
+      alert(width , height)
+    },
     afterLoad: function(origin, destination, direction){
      if(window.innerWidth<600){
        if(fullpage_api.getActiveSection().index==0){
