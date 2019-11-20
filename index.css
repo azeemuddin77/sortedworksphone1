@@ -545,14 +545,17 @@ body{
 .formmartop{
   margin-top: 170px;
 }
+.formmartop1{
+        margin-top:170px;
+ }
 
      @media (max-width: 767px){
       .formmartop{
         margin-top:50px;
       }
-      .formmartop1{
+     /* .formmartop1{
         margin-top:170px;
-      }
+      }*/
 
       .flip-headline{
         font-size:inherit;
