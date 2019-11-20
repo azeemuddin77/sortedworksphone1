@@ -199,9 +199,9 @@ moveBackground();
      $("#formmartop").addClass("formmartop1");
     $("#formmartop").removeClass("formmartop");
     setTimeout(function(){
-      $("input").hide();
+      $("input").addClass('d-none');
     },200).then(function(){
-      $("input").show();
+      $("input").toggleClass('d-none');
     }
     )
     $(".sortedBrands").empty();
