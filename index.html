@@ -200,7 +200,9 @@ moveBackground();
     $("#formmartop").removeClass("formmartop");
     setTimeout(function(){
       $("input").hide();
-    },1000)
+    },200).then(
+    $("input").show();
+    )
     $(".sortedBrands").empty();
     $(".sortedBrands").append('<span style="font-size:20px;">'+'Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted.<i class="em mb-2 ml-2 em---1" aria-role="presentation" aria-label="THUMBS UP SIGN"></i>'+'</span>');
     fullpage_api.setFitToSection(true);
