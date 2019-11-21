@@ -25,11 +25,8 @@
   <link rel="stylesheet" type="text/css" href="fullpage.min.css" />
   <script type="text/javascript" src="fullpage.min.js"></script>
   <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-    <!-- Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
-  <!-- Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"> -->
   <link rel="stylesheet" type="text/css" href="index.css">
   
     <style>
@@ -38,35 +35,8 @@
     }
     </style>
   <script> 
-  count=1;
-function countIncrease(){
-  count++
-       if(count==4){
-        $(".rotating-container").hide();
-       }
-       if(count>4){
-        count=4
-        
-       }
-       console.log(count)
-       $( ".container-"+(count-1) ).hide();
-       $( ".container-"+count ).show();
-       
 
-}
 
-function countDecrease(){
-  count--
-        if(count<1){
-        count=1
-       }
-       if(count!=4){
-         $(".rotating-container").show();
-       }
-       console.log(count)
-       $( ".container-"+count).show(  );
-       $( ".container-"+ (count+1)).hide()
-}
 $( function(){ 
   $('.slider').slick({
   infinite: true,
@@ -76,8 +46,6 @@ $( function(){
   autoplaySpeed: 2000,
 
 });
-    
-
 
   var lFollowX = 0,
     lFollowY = 0,
@@ -105,7 +73,7 @@ $(window).on('mousemove click', function(e) {
 
   var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
   var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
-  lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+  lFollowX = (20 * lMouseX) / 100;
   lFollowY = (10 * lMouseY) / 100;
 
 });
@@ -113,23 +81,25 @@ $(window).on('mousemove click', function(e) {
 moveBackground();
 
     $("#knowmore").on("click",function(){
-    fullpage_api.moveTo('section2');
-})
+        fullpage_api.moveTo('section2');
+    })
     $("#logo").on("click",function(){
-    fullpage_api.moveTo('section1');
-})
+        fullpage_api.moveTo('section1');
+    })
     
     $("#next-block").hide(); 
-   $("#previous").on("click",function(){
+    $("#previous").on("click",function(){
       $("#previous-block").show()
       $("#next-block").hide()
       $('#number').text("03/06")
-   })
-   $("#next").on("click",function(){
+    }) 
+
+    $("#next").on("click",function(){
      $("#next-block").show()
      $("#previous-block").hide()
      $('#number').text("06/06")
-   })  
+    })  
+
    $(".small-btn").on("click",function(){
     $(this).css({"background-color":"white","color":"black"})
    }) 
@@ -201,17 +171,14 @@ moveBackground();
 
  
   $("ul").on("click","li",function(){
-     $("#formmartop").addClass("formmartop1");
-    $("#formmartop").removeClass("formmartop");
-    // setTimeout(function(){
-    //   $("input").addClass('d-none');
-    // },200)
-    if(window.innerWidth<600){
-      $("input").addClass('d-none');
-      setTimeout(function(){
-      $("input").removeClass('d-none');
-      },200)
-    }
+     // $("#formmartop").addClass("formmartop1");
+     // $("#formmartop").removeClass("formmartop");
+     // if(window.innerWidth<600){
+     //    $("input").addClass('d-none');
+     //    setTimeout(function(){
+     //    $("input").removeClass('d-none');
+     //    },200)
+     // }
     
     $(".sortedBrands").empty();
     $(".sortedBrands").append('<span style="font-size:20px;">'+'Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted.<i class="em mb-2 ml-2 em---1" aria-role="presentation" aria-label="THUMBS UP SIGN"></i>'+'</span>');
@@ -543,7 +510,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
-    <script type="text/javascript">
+   
 
 </body>
 

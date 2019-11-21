@@ -549,14 +549,29 @@ body{
         margin-top:170px;
  }
 
+ul.slick-dots{
+  text-align:left;
+} 
+
+.invert-position{
+  position: absolute;
+  right: 0;
+  top: -50px;
+}
+
      @media (max-width: 767px){
+      .invert-position{
+        top:-30px;
+      }
+      .invert{
+        width:35px;
+      }
+      .about-header{
+        font-size: 1.2rem;
+      }
       .formmartop{
         margin-top:50px;
       }
-     /* .formmartop1{
-        margin-top:170px;
-      }*/
-
       .flip-headline{
         font-size:inherit;
       }
