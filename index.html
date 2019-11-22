@@ -171,22 +171,22 @@ moveBackground();
 
  
   $("ul").on("click","li",function(){
-     // $("#formmartop").addClass("formmartop1");
-     // $("#formmartop").removeClass("formmartop");
-     // if(window.innerWidth<600){
-     //    $("input").addClass('d-none');
-     //    setTimeout(function(){
-     //    $("input").removeClass('d-none');
-     //    },200)
-     // }
+     $("#formmartop").addClass("formmartop1");
+     $("#formmartop").removeClass("formmartop");
+     if(window.innerWidth<600){
+        $("input").addClass('d-none');
+        setTimeout(function(){
+        $("input").removeClass('d-none');
+        },200)
+     }
     
     $(".sortedBrands").empty();
     $(".sortedBrands").append('<span style="font-size:20px;">'+'Strap line to bottom line, online to offline, <br> digital medium to the homo-sapiens medium, we’ll have you sorted.<i class="em mb-2 ml-2 em---1" aria-role="presentation" aria-label="THUMBS UP SIGN"></i>'+'</span>');
     fullpage_api.setFitToSection(true);
   })
   $("input[type='text']").on("click",function(){
-    // $("#formmartop").removeClass("formmartop1");
-    // $("#formmartop").addClass("formmartop");
+    $("#formmartop").removeClass("formmartop1");
+    $("#formmartop").addClass("formmartop");
     $(".sortedBrands").empty();
     fullpage_api.setFitToSection(true);
 
