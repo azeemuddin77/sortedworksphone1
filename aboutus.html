@@ -22,6 +22,17 @@
       text-align: left;
    } 
   </style>
+  <script type="text/javascript">
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "300px";
+      document.body.style.backgroundColor = "black";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+
+  </script>
 </head>
 
 <body style="background-color:#0a0a0a" class="text-white w-100" >
@@ -31,12 +42,27 @@
   <div class="ml-auto" id="navbarSupportedContent">
    
     <ul class="navbar-nav ml-auto">
-      <!-- <li class="nav-item" onclick="openNav()" id="openbutton"><img src="./Assets/Menu.png" class="menu-transition"></li> -->
+      <li class="nav-item" onclick="openNav()" id="openbutton"><img src="./Assets/Menu.png" class="menu-transition"></li>
     </ul>
    
   </div>
 </nav>
-
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="./Assets/CloseButton.png" width="20px"></a>
+  <!-- <a href="./aboutus.html" class="mt-4">About</a> -->
+  <a href="./work">Work</a>
+  <a href="./contact.html">Contact</a>
+  <div class="mt-5 mb-3" style="font-size: 13px;">
+    <p>Bangalore:  +91 9538 6010 12</p>
+    <p>Mumbai: +91 9773 0052 90</p>
+    <p>contact@sortedworksinc.com</p>
+  </div>
+  <p class="mt-5">
+     <span class="general-transition mr-3" id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/facebook-white.svg"></a></span>
+     <span id="insta" class="general-transition mr-3"><a href="https://www.instagram.com/sortedworksinc/" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/instagram-white.svg"></a></span>
+     <span id="linkedin" class="general-transition"><a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/linkedin-white.svg"></a></span>
+  </p>
+</div>
   <!-- Navigate Pages section -->
   <div class="row work1marbot desmarbot" style="margin-top: 100px">
     <div class="col-md-2"></div>
