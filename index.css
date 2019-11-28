@@ -641,6 +641,9 @@ body{
 }
 
      @media (max-width: 767px){
+      html{
+        cursor: auto !important;
+      }
       .work-logo{
         width: 80%;
       }

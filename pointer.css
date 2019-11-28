@@ -3,6 +3,8 @@
      witch can be found on https://seattleowl.com. 
 */
 
+
+ @media (min-width: 600px){
 #pointer-dot {
     left: 0;
     top: 0;
@@ -35,4 +37,6 @@ html {
 
 a {
     cursor: none !important;
+}
+
 }
