@@ -565,7 +565,7 @@ body{
   margin: 30px 0;
 }
 
-.txtb input{
+.txtb input,textarea{
   font-size: 15px;
   color: white;
   border: none;

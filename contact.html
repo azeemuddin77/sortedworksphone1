@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-    crossorigin="anonymous">
+    crossorigin="anonymous"><link href="./pointer.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700i&display=swap" rel="stylesheet">  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
   <link rel="stylesheet" type="text/css" href="index.css">
@@ -49,9 +49,13 @@
       </div>
     </div>
 
-    <div class="txtb">
+    <!-- <div class="txtb">
       <input type="text" id="msg" required>
       <span data-placeholder="What can we do for you"></span>
+    </div> -->
+    <div class="txtb">
+      <textarea rows="4" cols="100"  id="msg" data-placeholder="What can we do for you" required></textarea>
+       <span data-placeholder="What can we do for you"></span>
     </div>
 
     <div class="w-100 d-flex justify-content-center justify-content-md-end">
@@ -60,11 +64,11 @@
   </form>
 
   <script type="text/javascript">
-    $(".txtb input").on("focus",function(){
+    $(".txtb input,textarea").on("focus",function(){
       $(this).addClass("focus");
     });
 
-    $(".txtb input").on("blur",function(){
+    $(".txtb input,textarea").on("blur",function(){
       if($(this).val() == "")
       $(this).removeClass("focus");
     });
@@ -121,6 +125,11 @@
     crossorigin="anonymous"></script>
 
 
-</body>
+<script src="./pointer.js"></script>
+    <script>
+        init_pointer({
+            
+        })
+    </script></body>
 
 </html>
