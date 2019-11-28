@@ -118,7 +118,7 @@ moveBackground();
       }
     });
 
-    $("#facebook,#linkedin,#youtube,#insta").on("mouseenter",function(){
+    $("#facebook,#linkedin,#Map,#insta").on("mouseenter",function(){
       var name=$(this).find("img").attr("src")
       if(name=="./Assets/facebook-white.svg"){
         $(this).find("img").attr("src","./Assets/facebook-hover.svg")
@@ -136,7 +136,7 @@ moveBackground();
 
       }
     }) 
-    $("#facebook,#linkedin,#youtube,#insta").on("mouseleave",function(){
+    $("#facebook,#linkedin,#Map,#insta").on("mouseleave",function(){
       var name=$(this).find("img").attr("src")
       if(name=="./Assets/facebook-hover.svg"){
         $(this).find("img").attr("src","./Assets/facebook-white.svg")

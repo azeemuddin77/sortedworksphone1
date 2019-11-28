@@ -141,7 +141,7 @@ This Terms and conditions page was created at termsandconditionstemplate.com gen
     <div class="col-2 d-flex align-items-center justify-content-center general-transition"><span id="insta"><a href="https://www.instagram.com/sortedworksinc/" target="_blank"><img class="mr-2"  width="24px" height="24px" src="./Assets/instagram-white.svg"><span class="d-md-inline-block d-none">Instagram</span></a></span></div>
     <div class="col-2 d-flex align-items-center justify-content-center general-transition"><span id="linkedin"><a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img class="mr-2" width="24px" height="24px" src="./Assets/linkedin-white.svg"><span class="d-md-inline-block d-none">LinkedIn</span></a></span> </div>
     <div class="col-2 d-flex align-items-center justify-content-center general-transition"><span id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-2" width="24px" height="24px" src="./Assets/facebook-white.svg"><span class="d-md-inline-block d-none">Facebook</span></a></span></div>
-    <div class="col-2 d-flex align-items-center justify-content-center general-transition"><span id="youtube"><img class="mr-2" width="24px" height="24px" src="./Assets/youtube-white.png"><span class="d-md-inline-block d-none">Youtube</span></span></div>
+    <div class="col-2 d-flex align-items-center justify-content-center general-transition"><span id="Map"><img class="mr-2" width="24px" height="24px" src="./Assets/Maps.png"><span class="d-md-inline-block d-none">Map</span></span></div>
     <div class="col-2"></div>
   </div>
 
@@ -176,7 +176,7 @@ This Terms and conditions page was created at termsandconditionstemplate.com gen
     }
 })
     $(function(){
-      $("#facebook,#linkedin,#youtube,#insta").on("mouseenter",function(){
+      $("#facebook,#linkedin,#Map,#insta").on("mouseenter",function(){
       var name=$(this).find("img").attr("src")
       if(name=="./Assets/facebook-white.svg"){
         $(this).find("img").attr("src","./Assets/facebook-hover.svg")
@@ -187,14 +187,14 @@ This Terms and conditions page was created at termsandconditionstemplate.com gen
       else if(name=="./Assets/linkedin-white.svg"){
        $(this).find("img").attr("src","./Assets/linkedin-hover.svg") 
       }
-      else if(name=="./Assets/youtube-white.png"){
+      else if(name=="./Assets/Maps.png"){
         $(this).find("img").attr("src","./Assets/youtube-hover.svg")
       }
       else{
 
       }
     }) 
-    $("#facebook,#linkedin,#youtube,#insta").on("mouseleave",function(){
+    $("#facebook,#linkedin,#Map,#insta").on("mouseleave",function(){
       var name=$(this).find("img").attr("src")
       if(name=="./Assets/facebook-hover.svg"){
         $(this).find("img").attr("src","./Assets/facebook-white.svg")
@@ -206,7 +206,7 @@ This Terms and conditions page was created at termsandconditionstemplate.com gen
        $(this).find("img").attr("src","./Assets/linkedin-white.svg") 
       }
       else if(name=="./Assets/youtube-hover.svg"){
-        $(this).find("img").attr("src","./Assets/youtube-white.png")
+        $(this).find("img").attr("src","./Assets/Maps.png")
       }
       else{
 

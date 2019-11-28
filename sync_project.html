@@ -92,7 +92,7 @@
       </div>
       <div class="col-xs-12 col-md-6 d-flex justify-content-around"> 
         <p class="share-buttons-width d-flex align-items-center general-transition" id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-2" width="24px" height="24px" src="./Assets/facebook-white.svg">Facebook</a></p>
-        <p id="youtube" class="share-buttons-width d-flex align-items-center general-transition"><img class="mr-2" width="24px" height="24px" src="./Assets/youtube-white.png">Youtube</p>
+        <p id="Map" class="share-buttons-width d-flex align-items-center general-transition"><img class="mr-2" width="24px" height="24px" src="./Assets/Maps.png">Youtube</p>
       </div>
     </div>
 
@@ -114,7 +114,7 @@
 
   <script type="text/javascript">
     $(function(){
-      $("#facebook,#linkedin,#youtube,#insta").on("mouseenter",function(){
+      $("#facebook,#linkedin,#Map,#insta").on("mouseenter",function(){
       var name=$(this).find("img").attr("src")
       if(name=="./Assets/facebook-white.svg"){
         $(this).find("img").attr("src","./Assets/facebook-hover.svg")
@@ -125,14 +125,14 @@
       else if(name=="./Assets/linkedin-white.svg"){
        $(this).find("img").attr("src","./Assets/linkedin-hover.svg") 
       }
-      else if(name=="./Assets/youtube-white.png"){
+      else if(name=="./Assets/Maps.png"){
         $(this).find("img").attr("src","./Assets/youtube-hover.svg")
       }
       else{
 
       }
     }) 
-    $("#facebook,#linkedin,#youtube,#insta").on("mouseleave",function(){
+    $("#facebook,#linkedin,#Map,#insta").on("mouseleave",function(){
       var name=$(this).find("img").attr("src")
       if(name=="./Assets/facebook-hover.svg"){
         $(this).find("img").attr("src","./Assets/facebook-white.svg")
@@ -144,7 +144,7 @@
        $(this).find("img").attr("src","./Assets/linkedin-white.svg") 
       }
       else if(name=="./Assets/youtube-hover.svg"){
-        $(this).find("img").attr("src","./Assets/youtube-white.png")
+        $(this).find("img").attr("src","./Assets/Maps.png")
       }
       else{
 
