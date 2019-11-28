@@ -13,20 +13,48 @@
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700i&display=swap" rel="stylesheet">  
   <link rel="stylesheet" type="text/css" href="index.css">
   <title>Sorted Works</title>
+  <script type="text/javascript">
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "300px";
+      document.body.style.backgroundColor = "black";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+
+  </script>
 </head>
 
 <body style="background-color: #0a0a0a;font-family: 'Josefin Sans', sans-serif;" class="text-white">
-  <!-- START HERE -->
-      <a href="index.html"><img  class="web-logo" src="./Assets/sorted-works-logo.png"></a>
-      <div class="col-1 col-none p-0 mt-5 pl-3 sm-work" style="position:fixed;top:-10px;right:15px">
-          <div class="w-25 float-left  ">
-            <svg height="4" width="25">
-                <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
-            </svg>
-        </div>
-          <div class="w-75 float-left pl-2"><p> <a id="working" href="work.html">WORK</a></p></div>
-      </div>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:black !important;box-shadow: 0px 2px 2px rgba(0,0,0,0.25);"> 
+    <a class="navbar-brand" href="./index.html"><img id="logo" width="100px"   src="./Assets/SortedLogo.svg"></a>
+    <div class="ml-auto" id="navbarSupportedContent">
+     
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" onclick="openNav()" id="openbutton"><img src="./Assets/Menu.png" class="menu-transition"></li>
+      </ul>
+     
+    </div>
+  </nav>
+  <!-- sidenav -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="./Assets/CloseButton.png" width="20px"></a>
+    <!-- <a href="./aboutus.html" class="mt-4">About</a> -->
+    <a href="./work">Work</a>
+    <a href="./contact.html">Contact</a>
+    <div class="mt-5 mb-3" style="font-size: 13px;">
+      <p>Bangalore:  +91 9538 6010 12</p>
+      <p>Mumbai: +91 9773 0052 90</p>
+      <p>contact@sortedworksinc.com</p>
+    </div>
+    <p class="mt-5">
+       <span class="general-transition mr-3" id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/facebook-white.svg"></a></span>
+       <span id="insta" class="general-transition mr-3"><a href="https://www.instagram.com/sortedworksinc/" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/instagram-white.svg"></a></span>
+       <span id="linkedin" class="general-transition"><a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/linkedin-white.svg"></a></span>
+    </p>
   </div>
+
   <div class="container text-center">
     <!-- <div class="border border-primary"><img src="Assets/Gif_Comp.gif" width="500px" class="mb-4 border border-warning"></div> -->
     <div class="d-flex justify-content-center mt-5 pt-5"><img src="Assets/EatFit--Logo.png" width="25%" class="mb-5"></div>
