@@ -18,19 +18,10 @@ let isHover = false
 let mouseDown = false
 const init_pointer = (options) => {
     document.addEventListener('mousemove', e => {
-            // cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
              mouseX=e.pageX,mouseY=e.pageY;
            
             
         })
-
-    window.onmousemove = (mouse) => {
-        // mouseX = mouse.clientX
-        // mouseY = mouse.clientY
-        console.log(mouseX,mouseY)
-        
-
-    }
 
     window.onmousedown = (mouse) => {
         mouseDown = true
