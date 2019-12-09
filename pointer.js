@@ -17,10 +17,19 @@ let ringY = -100
 let isHover = false
 let mouseDown = false
 const init_pointer = (options) => {
+    document.addEventListener('mousemove', e => {
+            // cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+             mouseX=e.pageX,mouseY=e.pageY;
+           
+            
+        })
 
     window.onmousemove = (mouse) => {
-        mouseX = mouse.clientX
-        mouseY = mouse.clientY
+        // mouseX = mouse.clientX
+        // mouseY = mouse.clientY
+        console.log(mouseX,mouseY)
+        
+
     }
 
     window.onmousedown = (mouse) => {
@@ -53,19 +62,19 @@ const init_pointer = (options) => {
         ringX = trace(ringX, mouseX, 0.2)
         ringY = trace(ringY, mouseY, 0.2)
 
-        if (document.querySelector(".p-action-click:hover")) {
-            pointer.style.borderColor = getOption("pointerColor")
-            isHover = true
-        } else {
-            pointer.style.borderColor = "white"
-            isHover = false
-        }
-        ring.style.borderColor = getOption("pointerColor")
-        if (mouseDown) {
-            ring.style.padding = getOption("ringClickSize") + "px"
-        } else {
-            ring.style.padding = getOption("ringSize") + "px"
-        }
+        // if (document.querySelector(".p-action-click:hover")) {
+        //     pointer.style.borderColor = getOption("pointerColor")
+        //     isHover = true
+        // } else {
+        //     pointer.style.borderColor = "white"
+        //     isHover = false
+        // }
+        // ring.style.borderColor = getOption("pointerColor")
+        // if (mouseDown) {
+        //     ring.style.padding = getOption("ringClickSize") + "px"
+        // } else {
+        //     ring.style.padding = getOption("ringSize") + "px"
+        // }
 
         pointer.style.transform = `translate(${mouseX}px, ${mouseY}px)`
         ring.style.transform = `translate(${ringX - (mouseDown ? getOption("ringClickSize") : getOption("ringSize"))}px, ${ringY - (mouseDown ? getOption("ringClickSize") : getOption("ringSize"))}px)`
