@@ -49,7 +49,15 @@
 
 
 $( function(){ 
-  $("#contact").on("click",function(e){
+  $(".privacypolicy").on("click",function(e){
+    e.preventDefault();
+    window.location="privacypolicy.html"
+  })
+  $(".terms-conditions1").on("click",function(e){
+    e.preventDefault();
+    window.location="termsandconditions.html"
+  })
+  $(".contact").on("click",function(e){
     e.preventDefault();
     window.location="contact.html"
   })
@@ -469,7 +477,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h5 class="pb-3 d-block d-md-none">Mumbai</h5>
           <p class="terms-conditionsfont">+91 9773 0052 90</p><br>
           <p class="terms-conditionsfont">contact@sortedworksinc.com</p>
-          <div class="btn-on-smal-screen"><a id="contact" href="./contact.html" class="btn btn-outline-warning small-btn mb-4 contactform">WRITE TO US </a></div>
+          <div class="btn-on-smal-screen"><a  href="#" class="contact btn btn-outline-warning small-btn mb-4 contactform">WRITE TO US </a></div>
         </div>
         <div class="sm-address align-items-center">
           <h3 class="pb-3 ">Social Media</h3>
@@ -484,14 +492,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as"><img id="facebook" class="mr-3" width="16px" height="16px" src="./Assets/facebook-white.svg"></a>
           <a href="https://www.instagram.com/sortedworksinc/"><img id="insta" class="mr-3" width="16px" height="16px" src="./Assets/instagram-white.svg"></a>
           <a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img id="linkedin" class="mr-3" width="16px" height="16px" src="./Assets/linkedin-white.svg"></a> 
-          <p class="mt-4 general-transition"><span class="float-left ml-4"><a href="./termsandconditions.html">Terms and condition</a></span><span class="float-right mr-4">Copyright 2019 All rights reserved. </span></p>
+          <p class="mt-4 general-transition"><span class="float-left ml-4"><a class="terms-conditions1" href="#">Terms and condition</a></span><span class="float-right mr-4">Copyright 2019 All rights reserved. </span></p>
         </div>
      <div class="bottom-spacing">
      </div>
   <div class="container d-flex justify-content-md-between justify-content-center align-items-center px-0">
-    <a id="contact" href="./contact.html" class="sm-button btn btn-outline-warning px-5" class="contactform">WRITE TO US</a>
-    <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition"><a href="./termsandconditions.html">Terms and conditions</a></p>
-    <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition"><a href="./privacypolicy.html">Privacy Policy</a></p>
+    <a  href="#" class="sm-button btn btn-outline-warning px-5 contactform contact">WRITE TO US</a>
+    <p class="terms-conditionsfont terms-conditions terms-conditions1 copytermsfonts mt-3 general-transition"><a href="#">Terms and conditions</a></p>
+    <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition"><a class="privacypolicy" href="#">Privacy Policy</a></p>
     <p class="terms-conditionsfont copytermsfonts mt-md-3 mt-0 d-md-block d-none">Copyright 2019 All rights reserved. </p>
   </div>
   </div></div>
