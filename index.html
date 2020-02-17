@@ -49,6 +49,10 @@
 
 
 $( function(){ 
+  $("#contact").on("click",function(e){
+    e.preventDefault();
+    window.location="./contact.html"
+  })
   $("#work").on("click",function(){
     window.location="work.html"
   })
@@ -465,7 +469,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h5 class="pb-3 d-block d-md-none">Mumbai</h5>
           <p class="terms-conditionsfont">+91 9773 0052 90</p><br>
           <p class="terms-conditionsfont">contact@sortedworksinc.com</p>
-          <div class="btn-on-smal-screen"><a href="./contact.html" class="btn btn-outline-warning small-btn mb-4 contactform">WRITE TO US </a></div>
+          <div class="btn-on-smal-screen"><a id="contact" href="./contact.html" class="btn btn-outline-warning small-btn mb-4 contactform">WRITE TO US </a></div>
         </div>
         <div class="sm-address align-items-center">
           <h3 class="pb-3 ">Social Media</h3>
@@ -485,7 +489,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      <div class="bottom-spacing">
      </div>
   <div class="container d-flex justify-content-md-between justify-content-center align-items-center px-0">
-    <a href="./contact.html" class="sm-button btn btn-outline-warning px-5" class="contactform">WRITE TO US</a>
+    <a id="contact" href="./contact.html" class="sm-button btn btn-outline-warning px-5" class="contactform">WRITE TO US</a>
     <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition"><a href="./termsandconditions.html">Terms and conditions</a></p>
     <p class="terms-conditionsfont terms-conditions copytermsfonts mt-3 general-transition"><a href="./privacypolicy.html">Privacy Policy</a></p>
     <p class="terms-conditionsfont copytermsfonts mt-md-3 mt-0 d-md-block d-none">Copyright 2019 All rights reserved. </p>
