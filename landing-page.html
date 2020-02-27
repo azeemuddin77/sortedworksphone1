@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/svg" href="Assets/sorted-favicon.svg" >  
+  <link rel="stylesheet" type="text/css" href="index.css">  
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <style type="text/css">
+    .sorted-works{
+      font-weight: bold;
+    }
+    body{
+      background-color: rgb(10, 10, 10);
+      color:white;
+    }
+    .form-1 input,.form-1 textarea,.form-1 select{
+      background-color: rgb(10, 10, 10);
+      border:1px solid red;
+    }
+    .form-1 input:focus{
+      background-color: rgb(10, 10, 10);
+    }
+    .form-1 textarea:focus{
+      background-color: rgb(10, 10, 10);
+    }
+    .form-1 .name{
+      border:2px solid yellow;
+    }
+    .form-1 .email{
+      border:2px solid red;
+    }
+    .form-1 .phone{
+      border:2px solid orange;
+    }
+    .form-1 #dropdown-service{
+      border:2px solid blue;
+    }
+    .form-1 #dropdown-service:focus{
+      background-color: rgb(10, 10, 10);
+    }
+    .form-1 .service-2{
+      border:2px solid green;
+    }
+    button{
+      background-color: rgb(10, 10, 10);
+      color:white;
+    }
+    .btn{
+      border:2px solid white!important;
+    }
+    .card{
+      background-color: transparent;
+    }
+    .card-transparent{
+      background-color: transparent;
+    }
+    .card-text{
+      float:right;
+    }
+    .w-20{
+      width:20%;
+      height:300px;
+    }
+   
+
+    /*our clients section*/
+
+    .circle{
+      width:100%;
+      border:1px solid red;
+      border-radius: 50%;
+      height:0;
+      padding-bottom: 100%
+    }
+    .orange-circle{
+      border:1px solid #ff6600;
+    }
+
+    .yellow-circle{
+      border:1px solid yellow;
+    }
+
+    .violet-circle{
+      border:1px solid #702AA1;
+    }
+
+    .gray-circle{
+      border:1px solid gray;
+    }
+
+    .black-circle{
+      border:1px solid black;
+    }
+
+    /*footer styles*/
+    .footer-container{
+      background-color: rgb(28,28,28);
+    }
+
+    .footer-form input,.footer-form textarea,.footer-form select{
+      border:2px solid black !important;
+      background-color: white;
+    }
+
+    .form-outer{
+      width:90%;
+      height:90%;
+      background:white;
+      border-radius: 10px;
+      color:black;
+      position: absolute;
+      top:-30px;
+
+    }
+    button{
+      width:35%;
+    }
+    strong{
+      font-weight: 1000!important;
+    }
+    textarea{
+      height: 100px;
+    }
+  </style>
+  <script type="text/javascript">
+    var form1="Disaster Management";
+
+    $(function(){
+
+        $( "#dropdown-service" ).change(function() {
+        form1=$(this).val();
+      }); 
+         $( "#footer-dropdown" ).change(function() {
+        form1=$(this).val();
+      }); 
+       $("#work").on("click",function(){
+          window.location="work.html"
+        })
+        $("#portfolio").on("click",function(){
+          window.location="portfolio.html"
+        })
+        $("#contact").on("click",function(){
+          window.location="contact.html"
+        })
+        $(".terms-conditions1").on("click",function(e){
+          e.preventDefault();
+          window.location="termsandconditions.html"
+        })
+        $(".contact").on("click",function(e){
+          e.preventDefault();
+          window.location="contact.html"
+        })
+
+
+        // header form
+        $("#submit").on("click",function(e){
+         e.preventDefault();
+         var name=$("#name").val()
+         var phone=$("#phone").val()
+         var email=$("#email").val()
+         var dropdownService=$("#dropdown-service").val()
+         var service=$("#service").val()
+          msg={
+            name:"Name Field Cannot Be Blank",
+            phone:"Phone Field Cannot Be Blank",
+            email:"Email Field Cannot Be Blank",
+          }
+           if(name == "" || name==undefined || name==null){
+                alert(msg["name"]);
+              }
+          else if(phone == "" || phone==undefined || phone==null){
+            alert(msg["phone"]);
+          }
+          else if(email == "" || email==undefined || email==null){
+            alert(msg["email"]);
+          }
+         
+          else{
+              if((name !== "" || name !== undefined) && (phone !== "" || phone !== undefined) && (email !== "" || email !== undefined)){
+                      $.ajax({
+                          method: "POST",
+                          url: "https://pacific-coast-83227.herokuapp.com/orders/landingpage",
+                          dataType:"json",
+                          data: { name: name, phone: phone, email:email, serviceSelected:dropdownService, serviceDescription:service }
+                        })
+                        .done(function( data ) {
+                          console.log(data);
+                          $("input[type=text], textarea").val("");
+                        });
+              }
+          }
+                   
+        });
+
+          // footerform
+
+         $("#submit1").on("click",function(e){
+         e.preventDefault();
+         var name=$("#name1").val()
+         var phone=$("#phone1").val()
+         var email=$("#email1").val()
+         var dropdownService=form1
+         var service=$("#service-description").val()
+          msg={
+            name:"Name Field Cannot Be Blank",
+            phone:"Phone Field Cannot Be Blank",
+            email:"Email Field Cannot Be Blank",
+          }
+           if(name == "" || name==undefined || name==null){
+                alert(msg["name"]);
+              }
+          else if(phone == "" || phone==undefined || phone==null){
+            alert(msg["phone"]);
+          }
+          else if(email == "" || email==undefined || email==null){
+            alert(msg["email"]);
+          }
+         
+          else{
+              if((name !== "" || name !== undefined) && (phone !== "" || phone !== undefined) && (email !== "" || email !== undefined)){     console.log(name,phone,email,dropdownService,service)
+                      $.ajax({
+                          method: "POST",
+                          url: "https://pacific-coast-83227.herokuapp.com/orders/landingpage",
+                          dataType:"json",
+                          data: { name: name, phone: phone, email:email, serviceSelected:dropdownService, serviceDescription:service }
+                        })
+                        .done(function( data ) {
+                          console.log(data);
+                          $("input[type=text], textarea").val("");
+                        });
+              }
+          }
+                   
+        });
+
+
+
+
+
+
+
+
+
+    })
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "300px";
+      document.body.style.backgroundColor = "black";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+
+
+     
+
+
+
+
+  </script>
+</head>
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:black !important;box-shadow: 0px 2px 2px rgba(0,0,0,0.25);"> 
+    <a class="navbar-brand"><img id="logo" width="100px"   src="./Assets/SortedLogo.svg"></a>
+    <div class="ml-auto" id="navbarSupportedContent">
+     
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" onclick="openNav()" id="openbutton"><img src="./Assets/Menu.png" class="menu-transition"></li>
+      </ul>
+     
+    </div>
+  </nav>
+  <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="./Assets/CloseButton.png" width="20px"></a>
+      <!-- <a href="./aboutus.html" class="mt-4">About</a> -->
+      <a id="work">Work</a>
+      <a id="portfolio">Portfolio</a>
+      <a id="contact">Contact</a>
+      <div class="mt-5 mb-3" style="font-size: 13px;">
+        <p>Bangalore:  +91 9538 6010 12</p>
+        <p>Mumbai: +91 9773 0052 90</p>
+        <p>contact@sortedworksinc.com</p>
+      </div>
+      <p class="mt-5">
+         <span class="general-transition mr-3" id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/facebook-white.svg"></a></span>
+         <span id="insta" class="general-transition mr-3"><a href="https://www.instagram.com/sortedworksinc/" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/instagram-white.svg"></a></span>
+         <span id="linkedin" class="general-transition"><a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/linkedin-white.svg"></a></span>
+      </p>
+  </div>
+  <div class="container-fluid px-5 mt-5 pt-5">
+    <div class="row">
+      <div class="col-6 display-1 sorted-works" >
+        <div>SORTED</div>
+        <div>WORKS</div>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-4">
+        <h2>Holla at us</h2>
+        <form class="form-1">
+            <div class="form-group">
+              <input type="text" class="form-control name"  placeholder="Name" id="name">
+            </div>
+            <div class="row mb-3">
+            <div class="col">
+              <input type="text" class="form-control email" placeholder="Email" id="email">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control phone" placeholder="Phone" id="phone">
+            </div>
+          </div>
+         
+          <div class="form-group">
+              <select class="form-control" id="dropdown-service">
+                <option value="Disaster Management">Disaster Management</option>
+                <option value="Design">Design</option>
+                <option value="Digital">Digital</option>
+                <option value="Strategy">Strategy</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Innovation">Innovation</option>
+                <option value="Branding">Branding</option>
+                <option value="Production">Production</option>
+                <option value="Sorted">Sorted</option>
+              </select>
+            </div>
+           <div class="form-group">
+              <textarea cols="50" rows="3" class="form-control service-2" placeholder="Service (optional)" id="service"></textarea>
+          </div>
+          <div class="form-group">
+              <button type="submit" id="submit" class="btn float-right">Submit</button>
+          </div>
+        </form>   
+      </div>
+    </div>
+    <div class="mt-5">
+      We ardently believe that Advertising is the art of portraying <br>
+      <strong>brands as people and people as brands</strong>.With that belief in mind,<br>
+      we have worked with clients from a wide range of industries. Each and every logo here <br>
+      is determinant of not only our vicious prying but also of our stellar services which range from <br>
+      <strong>Branding, Design, Production, Digital Marketing, UI/UX, Art Direction</strong> and a lot more.
+    </div>
+    <!-- our services section -->
+    <div class="row mt-5">
+      <div class="col-4">
+        <div class="h2 sorted-works text-center mb-5">
+          OUR SERVICES
+        </div>
+         <div class="px-4 col-md-12 col-12 d-flex-col justify-content-center">
+        <div class="row">
+          <div class="col-2 col-md-0"></div>
+          <div class="col-8 col-md-12">
+            <div class="d-flex justify-content-between mb-md-3 mb-1" style="margin:0 11px;">
+        <div class="mr-1 mr-md-0"><div class="w-100">
+              <div class="thecard">
+                <div class="thefront"><p></p></div>
+                <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
+              </div>
+            </div></div>
+        <div class="mr-1 mr-md-0"><div class="w-100">
+              <div class="thecard">
+                <div class="thefront" style="background-color:#ff6600;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ff6600;font-size:12px;"><span>Design</span></div>
+              </div>
+            </div></div>
+        <div><div class="w-100">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#ffff00;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ffff00;font-size:12px;"><span style="color: black;">Digital</span></div>
+              </div>
+            </div></div>
+      </div>
+      <div class="d-flex text-center justify-content-between mb-md-3 mb-1" style="margin:0 11px;">
+        <div class="mr-1 mr-md-0"><div class="w-100">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#25ce21;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#25ce21;font-size:12px;"><span>Strategy</span></div>
+              </div>
+            </div></div>
+        <div class="mr-1 mr-md-0"><div class="w-100">
+              <div class="thecard">
+                <div class="thefront"  style="background-color:#00aef4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center text-center" style="background-color:#00aef4;font-size:12px;"><div>Web <br>Development</div></div>
+              </div>
+            </div></div>
+        <div><div class="w-100">
+               <div class="thecard">
+                <div class="thefront"  style="background-color:#006ec4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#006ec4;font-size:12px;"><span>Innovation</span></div>
+              </div>
+            </div></div>
+      </div>
+      <div class="d-flex text-center justify-content-between mb-md-3 mb-1" style="margin:0 11px;">
+        <div class="mr-1 mr-md-0"><div class="w-100">
+               <div class="thecard">
+                <div class="thefront"  style="background-color:#702aa1;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#702aa1;font-size:12px;" ><span>Branding</span></div>
+              </div>
+            </div></div>
+        <div class="mr-1 mr-md-0"><div class="w-100">
+               <div class="thecard">
+                <div class="thefront"  style="background-color:#f4f4f4;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center"  style="background-color:#f4f4f4;font-size:12px;"><span style="color: black;">Production</span></div>
+              </div>
+            </div></div>
+        <div><div class="w-100">
+               <div class="thecard">
+                <div class="thefront"  style="background-color:#282828;"><p></p></div>
+                <div class="theback d-flex align-items-center justify-content-center" style="background-color:#282828;font-size:12px;"><span class="align-self-center ">Sorted</span></div>
+              </div>
+            </div></div>
+      </div>
+          </div>
+          <div class="col-2 col-md-0"></div>
+        </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="d-flex justify-content-between">
+          <div class="card w-20">
+            <div class="card-body">
+              <p class="card-text">Disaster Management</p>
+            </div>
+          </div>
+          <div class="card w-20">
+            <div class="card-body">
+              <p class="card-text">Design</p>
+            </div>
+          </div>
+          <div class="card w-20">
+            <div class="card-body">
+              <p class="card-text">Digital</p>
+            </div>
+          </div>
+          <div class="card w-20">
+            <div class="card-body">
+              <p class="card-text">Strategy</p>
+            </div>
+          </div>
+        </div>
+
+         <div class="d-flex justify-content-between mt-4">
+          <div class="card w-20 card-transparent">
+            <div class="card-body">
+            </div>
+          </div>
+          <div class="card w-20">
+            <div class="card-body">
+              <p class="card-text">Web Development</p>
+            </div>
+          </div>
+          <div class="card w-20">
+            <div class="card-body">
+              <p class="card-text">Innovation</p>
+            </div>
+          </div>
+          <div class="card w-20">
+            <div class="card-body">
+              <p class="card-text">Branding</p>
+            </div>
+          </div>
+         </div>
+
+         <div class="d-flex justify-content-between mt-4">
+          <div class="card w-20 card-transparent">
+            <div class="card-body">
+            </div>
+          </div>
+          <div class="card w-20 card-transparent">
+            <div class="card-body">
+            </div>
+          </div>
+          <div class="card w-20 card-transparent">
+            <div class="card-body">
+            </div>
+          </div>
+          <div class="card w-20">
+            <div class="card-body">
+              <p class="card-text">Production</p>
+            </div>
+          </div>
+         </div>
+
+
+      </div>
+    </div>
+    <!-- services section ends here -->
+    <!-- our clients section -->
+    <div class="row">
+      <div class="col-6">
+        <div class="h3 sorted-works text-left mb-5">
+          OUR CLIENTS
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="card w-25">
+            <div class="card-body">
+              <img width="100%" src="./Assets/eatfit1.png">         
+            </div>
+          </div>
+          <div class="card w-25">
+            <div class="card-body">
+              <img width="100%" src="./Assets/SlidersAndFriesLogo.png">         
+            </div>
+          </div>
+          <div class="card w-25">
+            <div class="card-body">
+              <img width="100%" src="./Assets/SYNCLogo.png">         
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+          <div class="card w-25">
+            <div class="card-body">
+              <img width="100%" src="./Assets/RMZLogo.png">         
+            </div>
+          </div>
+          <div class="card w-25">
+            <div class="card-body">
+               <img width="100%" src="./Assets/work1makeup.png"> 
+            </div>
+          </div>
+          <div class="card w-25">
+            <div class="card-body">
+               <img width="100%" src="./Assets/floradelic.png"> 
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+          <div class="card w-25">
+            <div class="card-body">
+              <img width="100%" src="./Assets/disruptlogo.png">         
+            </div>
+          </div>
+          <div class="card w-25">
+            <div class="card-body">
+               <img width="100%" src="./Assets/sugar.png"> 
+            </div>
+          </div>
+          <div class="card w-25">
+            <div class="card-body">
+               <img width="100%" src="./Assets/bounce.png"> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+         <div>
+              We ardently believe that Advertising is the art of portraying <br>
+              <strong>brands as people and people as brands</strong>.With that belief in mind,<br>
+              we have worked with clients from a wide range of industries. Each and every logo here <br>
+              is determinant of not only our vicious prying but also of our stellar services which range <br> from 
+              <strong>Branding, Design, Production, Digital Marketing, UI/UX, Art Direction</strong> and a lot more.
+         </div>
+         <div style="position: absolute;bottom:0;right: 0">
+          <div class="row">
+          <div class="col-2 col-md-0"></div>
+          <div class="col-8 col-md-12">
+          <div class="d-flex justify-content-between mb-md-3 mb-1 px-4" style="margin:0 11px;">
+          <div class="mr-1 mr-md-0"><div class="w-100">
+          <div class="thecard">
+          <div class="thefront"><p></p></div>
+          <div class="theback d-flex align-items-center text-center justify-content-center" style="font-size: 12px;"><div>Disaster<br> Management</div></div>
+          </div>
+          </div></div>
+          <div class="mr-1 mr-md-0"><div class="w-100">
+          <div class="thecard">
+          <div class="thefront" style="background-color:#ff6600;"><p></p></div>
+          <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ff6600;font-size:12px;"><span>Design</span></div>
+          </div>
+          </div></div>
+          <div><div class="w-100">
+          <div class="thecard">
+          <div class="thefront"  style="background-color:#ffff00;"><p></p></div>
+          <div class="theback d-flex align-items-center justify-content-center" style="background-color:#ffff00;font-size:12px;"><span style="color: black;">Digital</span></div>
+          </div>
+          </div></div>
+          </div>
+          <div class="d-flex text-center justify-content-between mb-md-3 mb-1 px-4" style="margin:0 11px;">
+          <div class="mr-1 mr-md-0"><div class="w-100">
+          <div class="thecard">
+          <div class="thefront"  style="background-color:#25ce21;"><p></p></div>
+          <div class="theback d-flex align-items-center justify-content-center" style="background-color:#25ce21;font-size:12px;"><span>Strategy</span></div>
+          </div>
+          </div></div>
+          <div class="mr-1 mr-md-0"><div class="w-100">
+          <div class="thecard">
+          <div class="thefront"  style="background-color:#00aef4;"><p></p></div>
+          <div class="theback d-flex align-items-center justify-content-center text-center" style="background-color:#00aef4;font-size:12px;"><div>Web <br>Development</div></div>
+          </div>
+          </div></div>
+          <div><div class="w-100">
+          <div class="thecard">
+          <div class="thefront"  style="background-color:#006ec4;"><p></p></div>
+          <div class="theback d-flex align-items-center justify-content-center" style="background-color:#006ec4;font-size:12px;"><span>Innovation</span></div>
+          </div>
+          </div></div>
+          </div>
+          <div class="d-flex text-center justify-content-between mb-md-3 mb-1 px-4" style="margin:0 11px;">
+          <div class="mr-1 mr-md-0"><div class="w-100">
+          <div class="thecard">
+          <div class="thefront"  style="background-color:#702aa1;"><p></p></div>
+          <div class="theback d-flex align-items-center justify-content-center" style="background-color:#702aa1;font-size:12px;" ><span>Branding</span></div>
+          </div>
+          </div></div>
+          <div class="mr-1 mr-md-0"><div class="w-100">
+          <div class="thecard">
+          <div class="thefront"  style="background-color:#f4f4f4;"><p></p></div>
+          <div class="theback d-flex align-items-center justify-content-center"  style="background-color:#f4f4f4;font-size:12px;"><span style="color: black;">Production</span></div>
+          </div>
+          </div></div>
+          <div><div class="w-100">
+          <div class="thecard">
+          <div class="thefront"  style="background-color:#282828;"><p></p></div>
+          <div class="theback d-flex align-items-center justify-content-center" style="background-color:#282828;font-size:12px;"><span class="align-self-center ">Sorted</span></div>
+          </div>
+          </div></div>
+          </div>
+          </div>
+          <div class="col-2 col-md-0"></div>
+          </div>
+          </div>
+      </div>
+    </div>
+    <!-- clients section ends here -->
+
+    <!-- footer starts here -->
+    <div class="row footer-container mt-5 mb-5">
+  <div class="col-md-8 pl-5"><div class=" pt-5 sm-textCenter animated fadeInUp ">
+    <div class="text-md-left text-center">
+      <svg height="4" width="35">
+          <line x1="0" y1="0" x2="100" y2="0" style="stroke:white;stroke-width:3" />
+      </svg>
+    </div>  
+    <div class="mb-5"><h2 class="sm-header" id="contact">Let's Get You, Sorted!</h2></div>
+    <div class="d-flex justify-content-between justify-content-sm-between" style="height:200px;">
+        <div class="width-on-sm-screen">
+          <h3 class="pb-3 d-md-block d-none">Bangalore</h3>
+          <h5 class="pb-3 d-block d-md-none">Bangalore</h5>
+          <p class="terms-conditionsfont">+91 9538 6010 12</p>
+          <p style="line-height: 1.2"><small class="terms-conditionsfont">1/33 <br> Chancellor Chambers, Ulsoor Road <br> Bangalore, 560 042 </small></p>
+          <div><p style="font-size: 0.8rem" class="general-transition d-inline-block"><small><a href="https://www.google.com/maps/place/Sorted+Works+Inc+-Advertising+Agency+in+Ulsoor+Road/@12.9758398,77.6145833,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae17e8603bb611:0xedff77684d4e59b!8m2!3d12.9758398!4d77.616772" target="_blank" >VIEW ON MAP</a></small></p></div>
+        </div>
+        <div class="width-on-sm-screen">
+          <h3 class="pb-3 d-md-block d-none">Mumbai</h3>
+          <h5 class="pb-3 d-block d-md-none">Mumbai</h5>
+          <p class="terms-conditionsfont">+91 9773 0052 90</p><br>
+          <p class="terms-conditionsfont">contact@sortedworksinc.com</p>
+          <div class="btn-on-smal-screen"><a  href="#" class="contact btn btn-outline-warning small-btn mb-4 contactform">WRITE TO US </a></div>
+        </div>
+        <div class="sm-address align-items-center">
+          <h3 class="pb-3 ">Social Media</h3>
+          <p class="d-flex align-items-center general-transition" id="facebook"><a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/facebook-white.svg">Facebook</a></p>
+          <p id="insta" class="general-transition"><a href="https://www.instagram.com/sortedworksinc/" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/instagram-white.svg">Instagram</a></p>
+          <p id="linkedin" class="general-transition"><a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img class="mr-3 " width="24px" height="24px" src="./Assets/linkedin-white.svg">LinkedIn</a></p>
+          
+        </div>
+     </div>
+     <div class="sm-icons">
+          <h5 class="mb-4">Social Media</h5>
+          <a href="https://www.facebook.com/sortedworksinc-105338564184919/?ti=as"><img id="facebook" class="mr-3" width="16px" height="16px" src="./Assets/facebook-white.svg"></a>
+          <a href="https://www.instagram.com/sortedworksinc/"><img id="insta" class="mr-3" width="16px" height="16px" src="./Assets/instagram-white.svg"></a>
+          <a href="https://www.linkedin.com/company/sorted-works" target="_blank"><img id="linkedin" class="mr-3" width="16px" height="16px" src="./Assets/linkedin-white.svg"></a> 
+          <p class="mt-4 general-transition"><span class="float-left ml-4"><a class="terms-conditions1" href="#">Terms and condition</a></span><span class="float-right mr-4">Copyright 2019 All rights reserved. </span></p>
+        </div>
+     <div class="bottom-spacing">
+     </div>
+  <div class="container-fluid d-flex justify-content-md-between justify-content-center align-items-center px-0">
+    <a  href="#" class="sm-button btn btn-outline-warning px-5 contactform contact">WRITE TO US</a>
+    <p class="terms-conditionsfont terms-conditions terms-conditions1 copytermsfonts mt-3 general-transition"><a href="#">Terms and conditions</a></p>
+   
+    <p class="terms-conditionsfont copytermsfonts mt-md-3 mt-0 d-md-block d-none">Copyright 2019 All rights reserved. </p>
+  </div>
+  </div></div>
+  <div class="col-md-4 footer-form">
+    <div class="form-outer">
+       <div class="mx-3 mt-4">
+         <h2 class="font-weight-bold">Holla at us</h2>
+         <form class="">
+            <div class="form-group">
+             <input type="text" class="form-control name"  placeholder="Name" id="name1">
+            </div>
+            <div class="row mb-3">
+              <div class="col">
+               <input type="text" class="form-control email" placeholder="Email" id="email1">
+              </div>
+              <div class="col">
+               <input type="text" class="form-control phone" placeholder="Phone" id="phone1">
+              </div>
+            </div>
+            <div class="form-group">
+              <select class="form-control"  id="footer-dropdown">
+                <option>Disaster Management</option>
+                <option>Design</option>
+                <option>Digital</option>
+                <option>Strategy</option>
+                <option>Web Development</option>
+                <option>Innovation</option>
+                <option>Branding</option>
+                <option>Production</option>
+                <option>Sorted</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea cols="50" rows="3" class="form-control service-2" placeholder="Service (optional)" id="service-description"></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" id="submit1" class="btn float-right">Submit</button>
+            </div>
+         </form>
+       </div>
+    </div>
+  </div>
+</div> 
+  </div>
+   <!-- end of fluid container -->
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  crossorigin="anonymous"></script>
+</body>
+</html>
